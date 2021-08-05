@@ -27,6 +27,10 @@ Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de
 * ```Version de Terraform```: terraform_v0.14
 ---
 
+Presione siguiente y llene los campos con el nombre del espacio de trabajo, seleccione el grupo de recursos al que tiene acceso, seleccione una ubicacion para el espacio de trabajo y como opcional puede dar una descripción. Una vez completos todos los campos puede presionar la opcion crear.
+
+
+
 # Referencias 📖
 
 * [Pagina de joomla](https://www.joomla.org/about-joomla.html).
