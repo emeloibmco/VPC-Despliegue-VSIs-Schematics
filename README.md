@@ -20,14 +20,13 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 
 ## Crear y configurar un espacio de trabajo en IBM Cloud Schematics
-Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de <a href="https://cloud.ibm.com/schematics/workspaces">IBM Cloud Schematics</a> y dar click en crear espacio de trabajo, una vez hecho esto aparecera una ventana en la que debera diligenciar la siguiente información.
+Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de <a href="https://cloud.ibm.com/schematics/workspaces">IBM Cloud Schematics</a> y dar click en ```CREAR ESPACIO DE TRABAJO```, una vez hecho esto aparecera una ventana en la que debera diligenciar la siguiente información.
 
 * ```URL del repositorio de Git```: https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics
-* ```Tocken de acceso```: "Este parametro solo es necesario para trabajar con repositorio privados"
+* ```Tocken de acceso```: "(Opcional) Este parametro solo es necesario para trabajar con repositorio privados"
 * ```Version de Terraform```: terraform_v0.14
----
 
-Presione ```siguiente```  > Agregue un nombre para el espacio de trabajo > Seleccione el grupo de recursos al que tiene acceso > Aeleccione una ubicacion para el espacio de trabajo y como opcional puede dar una descripción. 
+Presione ```SIGUIENTE```  > Agregue un nombre para el espacio de trabajo > Seleccione el grupo de recursos al que tiene acceso > Aeleccione una ubicacion para el espacio de trabajo y como opcional puede dar una descripción. 
 
 Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 
