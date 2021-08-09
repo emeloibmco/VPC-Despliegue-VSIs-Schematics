@@ -26,7 +26,7 @@ Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de
 * ```Tocken de acceso```: "(Opcional) Este parametro solo es necesario para trabajar con repositorio privados"
 * ```Version de Terraform```: terraform_v0.14
 
-Presione ```SIGUIENTE```  > Agregue un nombre para el espacio de trabajo > Seleccione el grupo de recursos al que tiene acceso > Aeleccione una ubicacion para el espacio de trabajo y como opcional puede dar una descripción. 
+Presione ```SIGUIENTE```  > Agregue un nombre para el espacio de trabajo > Seleccione el grupo de recursos al que tiene acceso > Seleccione una ubicacion para el espacio de trabajo y como opcional puede dar una descripción. 
 
 Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 
