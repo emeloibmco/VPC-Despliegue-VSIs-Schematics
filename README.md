@@ -29,6 +29,10 @@ Presione ```SIGUIENTE```  > Agregue un nombre para el espacio de trabajo > Selec
 
 Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 
+<p align="center">
+<img width="800" alt="img8" src=images/workspacecreate.gif>
+</p>
+
 ## Configurar las variables de personalización de la plantilla de terraform
 Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite personalizar el espacio de trabajo allí debe ingresar la siguiente información:
 
@@ -37,6 +41,9 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```count-vsi```: Esta variable le permite establecer el numero de servidores virtuales que va a crear, debe ingresar un numero par ya que se despliegua con una distribución de dos regiones de disponibilidad
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
+<p align="center">
+<img width="800" alt="img8" src=images/configvars.gif>
+</p>
 
 ## Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
@@ -46,5 +53,5 @@ Ya que estan todos los campos de personalización completos, debe ir hasta la pa
 
 # Referencias 📖
 
-* [Acerca de IBM Cloud Schematicsa](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics).
+* [Acerca de IBM Cloud Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics).
 
