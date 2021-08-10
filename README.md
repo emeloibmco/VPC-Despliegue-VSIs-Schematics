@@ -10,7 +10,6 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 2. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#Crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
 3. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
 4. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
-5. [....](#Referencias-mag)
 6. [Autores](#Autores-black_nib)
 <br />
 
