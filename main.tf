@@ -103,7 +103,7 @@ data "ibm_is_subnet" "wdc_subnet" {
 # Despliegue de servidores en wdc
 ##############################################################################
 
-resource "ibm_is_instance" "cce-vsi-dal" {
+resource "ibm_is_instance" "cce-vsi-wdc" {
   provider = ibm.east
   count    = var.count-vsi/2
   name    = "cce-vsiwdc-${count.index + 1}"
