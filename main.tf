@@ -52,7 +52,7 @@ data "ibm_is_subnet" "dallas_subnet" {
 resource "ibm_is_instance" "cce-vsi-dal" {
   provider = ibm.south
   count    = var.count-vsi/2
-  name    = "cce-vsi-${count.index + 1}"
+  name    = "cce-vsidal-${count.index + 1}"
   image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
   profile = "cx2-2x4"
 
@@ -106,7 +106,7 @@ data "ibm_is_subnet" "wdc_subnet" {
 resource "ibm_is_instance" "cce-vsi-dal" {
   provider = ibm.east
   count    = var.count-vsi/2
-  name    = "cce-vsi-${count.index + 1}"
+  name    = "cce-vsiwdc-${count.index + 1}"
   image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
   profile = "cx2-2x4"
 
