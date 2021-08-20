@@ -2,7 +2,7 @@ terraform {
   required_providers {
     ibm = {
       source = "IBM-Cloud/ibm"
-      version = "~> 1.12.0"
+      version = "~> 1.29.0"
     }
   }
 }
@@ -26,6 +26,7 @@ data "ibm_resource_group" "group" {
 ##############################################################################
 
 data "ibm_is_ssh_key" "sshkeydall" {
+  provider = ibm.south
   name = var.ssh_keyname_dall
 }
 
@@ -34,6 +35,7 @@ data "ibm_is_ssh_key" "sshkeydall" {
 ##############################################################################
 
 data "ibm_is_vpc" "dallas_vpc" {
+  provider = ibm.south
   name = var.name_vpc_dallas
 }
 
@@ -42,6 +44,7 @@ data "ibm_is_vpc" "dallas_vpc" {
 ##############################################################################
 
 data "ibm_is_subnet" "dallas_subnet" {
+  provider = ibm.south
   name = var.name_subnet_dallas
 }
 
@@ -80,6 +83,7 @@ provider "ibm" {
 ##############################################################################
 
 data "ibm_is_ssh_key" "sshkeywdc" {
+  provider = ibm.east
   name = var.ssh_keyname_wdc
 }
 
@@ -88,6 +92,7 @@ data "ibm_is_ssh_key" "sshkeywdc" {
 ##############################################################################
 
 data "ibm_is_vpc" "wdc_vpc" {
+  provider = ibm.east
   name = var.name_vpc_wdc
 }
 
@@ -96,6 +101,7 @@ data "ibm_is_vpc" "wdc_vpc" {
 ##############################################################################
 
 data "ibm_is_subnet" "wdc_subnet" {
+  provider = ibm.east
   name = var.name_subnet_wdc
 }
 
