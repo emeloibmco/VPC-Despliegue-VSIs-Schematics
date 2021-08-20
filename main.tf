@@ -7,6 +7,10 @@ terraform {
   }
 }
 
+##############################################################################
+# Despliegue de recursos en DALLAS
+##############################################################################
+
 provider "ibm" {
   alias  = "south"
   region = "us-south"
@@ -17,38 +21,32 @@ data "ibm_resource_group" "group" {
   name = var.resource_group
 }
 
-resource "ibm_is_ssh_key" "cce-ssh-dal" {
-  name       = "cce-ssh-dal"
-  public_key = var.ssh-public-key-dal
-  resource_group = data.ibm_resource_group.group.id
+##############################################################################
+# Recuperar data de la SSH Key
+##############################################################################
+
+data "ibm_is_ssh_key" "sshkeydall" {
+  name = var.ssh_keyname_dall
 }
 
 ##############################################################################
-# Create a VPC DALLAS
+# Recuperar data de la VPC DALLAS
 ##############################################################################
 
-resource "ibm_is_vpc" "vpc-dal" {
-  provider = ibm.south
-  name          = "cce-vpc-dal"
-  resource_group = data.ibm_resource_group.group.id
+data "ibm_is_vpc" "dallas_vpc" {
+  name = var.name_vpc_dallas
 }
 
 ##############################################################################
-# Create Subnet zone DALL
+# Recuperar data de la subnet en dallas
 ##############################################################################
 
-# Increase count to create subnets in all zones
-resource "ibm_is_subnet" "cce-subnet-dal" {
-  provider = ibm.south
-  name            = "cce-subnet-dal"
-  vpc             = ibm_is_vpc.vpc-dal.id
-  zone            = "us-south-1"
-  total_ipv4_address_count= "256"
-  resource_group  = data.ibm_resource_group.group.id
+data "ibm_is_subnet" "dallas_subnet" {
+  name = var.name_subnet_dallas
 }
 
 ##############################################################################
-# Desploy instances on DALL
+# Despliegue de servidores en dallas
 ##############################################################################
 
 resource "ibm_is_instance" "cce-vsi-dal" {
@@ -59,68 +57,65 @@ resource "ibm_is_instance" "cce-vsi-dal" {
   profile = "cx2-2x4"
 
   primary_network_interface {
-    subnet = ibm_is_subnet.cce-subnet-dal.id
+    subnet = data.ibm_is_subnet.dallas_subnet.id
   }
 
-  vpc       = ibm_is_vpc.vpc-dal.id
+  vpc       = data.ibm_is_vpc.dallas_vpc.id
   zone      = "us-south-1"
-  keys      = [ibm_is_ssh_key.cce-ssh-dal.id]
+  keys      = [data.ibm_is_ssh_key.sshkeydall.id]
   resource_group = data.ibm_resource_group.group.id
 }
+
+##############################################################################
+# Despliegue de recursos en WDC
+##############################################################################
 
 provider "ibm" {
   alias  = "east"
   region = "us-east"
 }
 
-resource "ibm_is_ssh_key" "cce-ssh-wdc" {
-  provider = ibm.east
-  name       = "cce-ssh-wdc"
-  public_key = var.ssh-public-key-wdc
-  resource_group = data.ibm_resource_group.group.id
+##############################################################################
+# Recuperar data de la SSH Key
+##############################################################################
+
+data "ibm_is_ssh_key" "sshkeywdc" {
+  name = var.ssh_keyname_wdc
 }
 
 ##############################################################################
-# Create a VPC WDC
+# Recuperar data de la VPC WDC
 ##############################################################################
 
-resource "ibm_is_vpc" "vpc-wdc" {
-  provider = ibm.east
-  name          = "cce-vpc-wdc"
-  resource_group = data.ibm_resource_group.group.id
+data "ibm_is_vpc" "wdc_vpc" {
+  name = var.name_vpc_wdc
 }
 
 ##############################################################################
-# Create Subnet zone WDC
+# Recuperar data de la subnet en wdc
 ##############################################################################
 
-# Increase count to create subnets in all zones
-resource "ibm_is_subnet" "cce-subnet-wdc" {
-  provider = ibm.east
-  name            = "cce-subnet-wdc"
-  vpc             = ibm_is_vpc.vpc-wdc.id
-  zone            = "us-east-1"
-  total_ipv4_address_count= "256"
-  resource_group  = data.ibm_resource_group.group.id
+data "ibm_is_subnet" "wdc_subnet" {
+  name = var.name_subnet_wdc
 }
 
 ##############################################################################
-# Desploy instances on WDC
+# Despliegue de servidores en wdc
 ##############################################################################
 
-resource "ibm_is_instance" "cce-vsi-wdc" {
+resource "ibm_is_instance" "cce-vsi-dal" {
   provider = ibm.east
   count    = var.count-vsi/2
   name    = "cce-vsi-${count.index + 1}"
-  image   = "r014-ce5f692d-763d-4b5a-bca2-93d6990fb3fd"
+  image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
   profile = "cx2-2x4"
 
   primary_network_interface {
-    subnet = ibm_is_subnet.cce-subnet-wdc.id
+    subnet = data.ibm_is_subnet.wdc_subnet.id
   }
 
-  vpc       = ibm_is_vpc.vpc-wdc.id
+  vpc       = data.ibm_is_vpc.wdc_vpc.id
   zone      = "us-east-1"
-  keys      = [ibm_is_ssh_key.cce-ssh-wdc.id]
+  keys      = [data.ibm_is_ssh_key.sshkeywdc.id]
   resource_group = data.ibm_resource_group.group.id
 }

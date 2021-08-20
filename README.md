@@ -16,6 +16,8 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ## Pre Requisitos :pencil:
 * Contar con una cuenta en <a href="https://cloud.ibm.com/"> IBM Cloud</a>.
 * Contar con un grupo de recursos específico para la implementación de los recursos.
+* Crear una ssh key en cada una de las dos zonas donde se realizara el despliegue de las VSI
+* Crear una VPC en cada una de las dos zonas donde se realizara el despliegue de las VSI con su respectivo segmento de red
 
 
 ## Crear y configurar un espacio de trabajo en IBM Cloud Schematics

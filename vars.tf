@@ -1,9 +1,25 @@
-variable "ssh-public-key-dal" {
-  description = "ssh public key for dallas"
+variable "ssh_keyname_dall" {
+  description = "ssh key name dallas"
 }
 
-variable "ssh-public-key-wdc" {
-  description = "ssh public key for wdc"
+variable "ssh_keyname_wdc" {
+  description = "ssh key name WDC"
+}
+
+variable "name_vpc_dallas" {
+  description = "vpc dallas name"
+}
+
+variable "name_vpc_wdc" {
+  description = "vpc wdc name"
+}
+
+variable "name_subnet_dallas" {
+  description = "subnet dallas name"
+}
+
+variable "name_subnet_wdc" {
+  description = "subnet wdc name"
 }
 
 variable "count-vsi" {
