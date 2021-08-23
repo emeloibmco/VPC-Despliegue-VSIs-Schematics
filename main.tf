@@ -57,7 +57,7 @@ resource "ibm_is_instance" "cce-vsi-dal" {
   count    = var.count-vsi/2
   name    = "cce-vsidal-${count.index + 1}"
   image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
-  profile = "cx2-2x4"
+  profile = "cx2-4x8"
 
   primary_network_interface {
     subnet = data.ibm_is_subnet.dallas_subnet.id
@@ -114,7 +114,7 @@ resource "ibm_is_instance" "cce-vsi-wdc" {
   count    = var.count-vsi/2
   name    = "cce-vsiwdc-${count.index + 1}"
   image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
-  profile = "cx2-2x4"
+  profile = "cx2-4x8"
 
   primary_network_interface {
     subnet = data.ibm_is_subnet.wdc_subnet.id
