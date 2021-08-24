@@ -113,7 +113,7 @@ resource "ibm_is_instance" "cce-vsi-wdc" {
   provider = ibm.east
   count    = var.count-vsi/2
   name    = "cce-vsiwdc-${count.index + 1}"
-  image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
+  image   = "r014-ce5f692d-763d-4b5a-bca2-93d6990fb3fd"
   profile = "cx2-4x8"
 
   primary_network_interface {
