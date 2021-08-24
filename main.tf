@@ -56,7 +56,7 @@ resource "ibm_is_instance" "cce-vsi-dal" {
   provider = ibm.south
   count    = var.count-vsi/2
   name    = "cce-vsidal-${count.index + 1}"
-  image   = "0717_a6d2a62c-64f4-44bb-aec8-8578f80ae7ba"
+  
   profile = "cx2-4x8"
 
   primary_network_interface {
@@ -113,7 +113,7 @@ resource "ibm_is_instance" "cce-vsi-wdc" {
   provider = ibm.east
   count    = var.count-vsi/2
   name    = "cce-vsiwdc-${count.index + 1}"
-  image   = "0717_a6d2a62c-64f4-44bb-aec8-8578f80ae7ba"
+  
   profile = "cx2-4x8"
 
   primary_network_interface {
