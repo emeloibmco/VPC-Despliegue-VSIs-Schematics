@@ -7,9 +7,10 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
-2. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#Crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
-3. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
-4. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
+2. [Crear y configurar una vpc, subred y ssh key en cada zona (Dallas, Washington)](#Crear-y-configurar-una-vpc,-subred-y-ssh-key-en-cada-zona-(Dallas,-Washington))
+3. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#Crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
+4. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
+5. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
 6. [Autores](#Autores-black_nib)
 <br />
 
@@ -18,6 +19,25 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 * Contar con un grupo de recursos específico para la implementación de los recursos.
 * Crear una ssh key en cada una de las dos zonas donde se realizara el despliegue de las VSI
 * Crear una VPC en cada una de las dos zonas donde se realizara el despliegue de las VSI con su respectivo segmento de red
+<br />
+
+## Crear y configurar una vpc, subred y ssh key en cada zona (Dallas, Washington)
+### vpc
+1. Desde el menú de navegación o menú de hambuerguesa seleccione la pestaña ``Ìnfraestructura VPC```.
+2. En esta pestaña en la seccion de red/network seleccione la opción de ```VPCs``` y de click en el boton de ```crear```.
+3. Una vez se encuentre en la ventana de configuracion de la VPC complete la información necesaria de la siguiente manera:
+
+  * ```Nombre/Name```: asigne un nombre explusivo para la VPC.
+  * ```Grupo de regursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
+  * ```Ubicación/Region```: Seleccione la ubicación en la cual desea implementar la VPC (Dallas o Washington).
+  * ```Grupo de seguridad predeterminado```: Deje seleccionadas las opciones Permitir SSH/Allow SSH y Permitir ping/Allow ping.
+  * ```Prefijos de dirección predeterminados/
+
+4. Una vez haya terminado de llenar esta informacion de click en el botón ```Crear nube privada virtual```.
+
+
+
+
 
 
 ## Crear y configurar un espacio de trabajo en IBM Cloud Schematics
@@ -60,4 +80,3 @@ Ya que estan todos los campos de personalización completos, debe ir hasta la pa
 # Referencias 📖
 
 * [Acerca de IBM Cloud Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics).
-
