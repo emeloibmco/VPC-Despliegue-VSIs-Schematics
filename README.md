@@ -117,9 +117,25 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 <img width="800" alt="img8" src=images/variables.gif>
 </p>
 
-## Crear un caso en soporte para aumentar la cuota de vCPUs por region 
-Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada region (especialmente en la region de Dallas), para esto tenga en cuenta los siguientes pasos:
-1. ingrese a la documentacion sobre <a href="https://cloud.ibm.com/docs/vpc"> Iirtual Private Cloud (VPC)</a>. en *IBM Cloud* 
+## Crear un caso en soporte para aumentar la cuota de vCPUs por región 
+Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada región (especialmente en la región de Dallas), para esto tenga en cuenta los siguientes pasos:
+1. ingrese a la documentación sobre <a href="https://cloud.ibm.com/docs/vpc"> Virtual Private Cloud (VPC)</a> en *IBM Cloud* 
+2. Seleccione la pestaña de ```Cuotas y límites de servicio/Quotas and service limits```.
+3. Una vez se encuentre en esta pestaña de click en el botón ```Contactar a soporte/contact support```, al hacer esto se abrirá una nueva pestaña en donde podrá crear un nuevo caso en soporte.
+4. En esta pestaña debe seleccionar la categoría de Virtual Private Cloud (VPC).
+5. Luego de esto en la ventana de ```tema/topic``` complete la información necesaria de la siguiente manera.
+    * ```tema/topic```: Virtual Private Cloud (VPC).
+    * ```subtema/subtopic```: Solicitud de cuota/Quota request.
+6. Una vez complete esta información de click en el botón ```siguiente```, esto lo llevara a la ventana de ```detalles/details```.
+7. En esta ventana complete la información necesaria de la siguiente manera.
+    * ```Asunto/Subject```: El asunto del caso en ingles Ej:'Increase Quota limit for VPC vCPUs in Dallas'.
+    * ```Descripción/Description```: La descripción del caso en ingles Ej:'I would appreciate your help in increasing the vCPU quota for VPC from 200 vCPUs to 300 vCPUs, thank you'.
+    * ```Lista de contactos para seguimiento/contacts watchlist```: Aquí puede agregar a otro miembro del grupo, si lo desea, para que sea notificado del caso de soporte.
+8. Una vez complete esta información de click en el botón de ```siguiente``` esto lo llevara a la pestaña de resumen y aquí de click en el botón de ```enviar caso/Submit case``` para finalizar el caso en soporte.
+
+
+
+
 
 ## Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
