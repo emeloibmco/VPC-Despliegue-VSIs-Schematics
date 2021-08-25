@@ -111,7 +111,7 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
 <p align="center">
-<img width="800" alt="img8" src=images/configvars.gif>
+<img width="800" alt="img8" src=images/variables.gif>
 </p>
 
 ## Generar y Aplicar el plan de despliegue de los servidores VPC
