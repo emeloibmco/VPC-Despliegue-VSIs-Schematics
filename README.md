@@ -117,6 +117,10 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 <img width="800" alt="img8" src=images/variables.gif>
 </p>
 
+## Crear un caso en soporte para aumentar la cuota de vCPUs por region 
+Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada region (especialmente en la region de Dallas), para esto tenga en cuenta los siguientes pasos:
+1. ingrese a la documentacion sobre <a href="https://cloud.ibm.com/docs/vpc"> Iirtual Private Cloud (VPC)</a>. en *IBM Cloud* 
+
 ## Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
 
