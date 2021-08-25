@@ -52,8 +52,8 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 </p>
 
 
-### Ssh key
-1. para crear una ssh key es necesario obtener primero una llave publica, para esto tenga en cuenta los siguientes pasos:
+### SSH key
+1. para crear una ssh key es necesario obtener primero una llave publica la cual se asignara en la consifuración de seguridad para el acceso via ssh al servidor virtual, a continuación se muestra una de las opciones en las que se puede generar el par de llaves SSH para esto tenga en cuenta los siguientes pasos:
    * Acceda al *IBM Cloud Shell* e ingrese el siguiente comando: 
    `ssh-keygen -t rsa -C "user_id" `
    * Al colocar el comando anterior, en la consola se pide que especifique la ubicación, en este caso oprima la tecla Enter para que se guarde en la ubicación sugerida. Posteriormente, cuando se pida la ```Passphrase ```coloque una contraseña que pueda recordar o guárdela, ya que se utilizará más adelante.
@@ -78,6 +78,8 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 <img width="800" alt="img8" src=images/SSHkey.gif>
 </p>
  
+> Nota: `Para acceder a las instancias creadas con la llave publica configurada anteriormente, es necesario conservar localmente la componente privada de la llave`
+
 
 ## Crear y configurar un espacio de trabajo en IBM Cloud Schematics
 Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de <a href="https://cloud.ibm.com/schematics/workspaces">IBM Cloud Schematics</a> y dar click en ```CREAR ESPACIO DE TRABAJO```, una vez hecho esto aparecera una ventana en la que debera diligenciar la siguiente información.
