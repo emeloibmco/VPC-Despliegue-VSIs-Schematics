@@ -65,7 +65,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 </p>
  
  
- 2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear``
+ 2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear```
 3. Una vez se encuentre en la ventana de configuración complete la información necesaria de la siguiente manera:
  * ```Nombre/Name```: asigne un nombre exclusivo para la SSH key.
   * ```Grupo de recursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
@@ -78,13 +78,6 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 <img width="800" alt="img8" src=images/SSHkey.gif>
 </p>
  
-
-
-
-
-
-
-
 
 ## Crear y configurar un espacio de trabajo en IBM Cloud Schematics
 Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de <a href="https://cloud.ibm.com/schematics/workspaces">IBM Cloud Schematics</a> y dar click en ```CREAR ESPACIO DE TRABAJO```, una vez hecho esto aparecera una ventana en la que debera diligenciar la siguiente información.
@@ -108,8 +101,12 @@ Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 ## Configurar las variables de personalización de la plantilla de terraform
 Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite personalizar el espacio de trabajo allí debe ingresar la siguiente información:
 
-* ```ssh-public-key-dal```: Debe crear un par de llaves ssh y proporcionar el valor de la llave publica para crear el recurso en IBM Cloud (Dallas)
-* ```ssh-public-key-wdc```: Debe crear un par de llaves ssh y proporcionar el valor de la llave publica para crear el recurso en IBM Cloud (Washington)
+* ```ssh_keyname_dall```: Ingrese el nombre de la llave ssh creada en Dallas anteriormente.
+* ```ssh_keyname_wdc```: Ingrese el nombre de la llave ssh creada en Washington anteriormente.
+* ```name_vpc_dallas```: Ingrese el nombre de la VPC desplegada en Dallas anteriormente.
+* ```name_vpc_wdc```: Ingrese el nombre de la VPC desplegada en Washington anteriormente.
+* ```name_subnet_dallas```: Ingrese el nombre de la subred desplegada en la VPC de Dallas anteriormente.
+* ```name_subnet_wdc```: Ingrese el nombre de la subred desplegada en la VPC de Washington anteriormente.
 * ```count-vsi```: Esta variable le permite establecer el numero de servidores virtuales que va a crear, debe ingresar un numero par ya que se despliegua con una distribución de dos regiones de disponibilidad
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
