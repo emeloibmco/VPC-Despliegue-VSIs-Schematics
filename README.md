@@ -7,7 +7,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
-2. [Crear y configurar una vpc, subred y ssh key en cada zona (Dallas, Washington)](#Crear-y-configurar-una-vpc,-subred-y-ssh-key-en-cada-zona-(Dallas,-Washington))
+2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)](#Crear-y-configurar-una-VPC,-una-subred-y-una-ssh-key-en-cada-zona-(Dallas,-Washington))
 3. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#Crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
 4. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
 5. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
@@ -21,19 +21,45 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 * Crear una VPC en cada una de las dos zonas donde se realizara el despliegue de las VSI con su respectivo segmento de red
 <br />
 
-## Crear y configurar una vpc, subred y ssh key en cada zona (Dallas, Washington)
-### vpc
+## Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)
+### VPC
 1. Desde el menú de navegación o menú de hambuerguesa seleccione la pestaña ``Ìnfraestructura VPC```.
-2. En esta pestaña en la seccion de red/network seleccione la opción de ```VPCs``` y de click en el boton de ```crear```.
+2. En esta pestaña, en la seccion de red/network seleccione la opción de ```VPCs``` y de click en el boton de ```crear```.
 3. Una vez se encuentre en la ventana de configuracion de la VPC complete la información necesaria de la siguiente manera:
 
   * ```Nombre/Name```: asigne un nombre explusivo para la VPC.
   * ```Grupo de regursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
   * ```Ubicación/Region```: Seleccione la ubicación en la cual desea implementar la VPC (Dallas o Washington).
   * ```Grupo de seguridad predeterminado```: Deje seleccionadas las opciones Permitir SSH/Allow SSH y Permitir ping/Allow ping.
-  * ```Prefijos de dirección predeterminados/
+  * ```Prefijos de dirección predeterminados/default prefix for each zone```: Seleccione el campo, para poder trabajar posteriormente con estas subredes.
 
-4. Una vez haya terminado de llenar esta informacion de click en el botón ```Crear nube privada virtual```.
+4. Una vez haya terminado de llenar esta informacion de click en el botón ```Crear nube privada virtual/Create virtual private cloud```.
+
+### Subred
+1. Desde la pestaña de ```VPCs```seleccione la VPC que acabo de crear.
+2. Una vez en esta ventana seleccione la subred a la cual desea cambiarle el nombre, las subredes se encuentran enlistadas en la parte inferior de la ventana en la tabla subredes en esta VPC.
+3. En la ventana de la subred seleccion el icono de lapiz al lado del nombre para editarlo y cambielo por el nombre que desee.
+4. Es necesario verificar que la subred se encuentre dentro de la VPC desplegada anteriormente y en la misma zona que esta (Dallas, Washington).
+
+
+### Ssh key
+1. para crear una ssh key es necesario obtener primero una llave publica, para esto tenga en cuenta los siguientes pasos:
+  * Acceda al *IBM Cloud Shell* e ingrese el siguiente comando: 
+  `ssh-keygen -t rsa -C "user_id" `
+  * Al colocar el comando anterior, en la consola se pide que especifique la ubicación, en este caso oprima la tecla Enter para que se guarde en la ubicación sugerida. Posteriormente, cuando se pida la ```Passphrase ```coloque una constraseña que pueda recordar o guardela, ya que se utilizará más adelante.
+  * Muévase con el comando ```cd .ssh``` a la carpeta donde están los archivos ```id_rsa.pub``` y ```id_rsa```. Estos archivos contienen las claves públicas y privadas respectivamente.
+  * Copie el valor de la clave pública, utilice el comando: `cat id_rsa.pub`.
+ 2. Una vez obtinida la llave publica desde la pestaña de infraestructura VPC seleccione la opcion ```SSH keys```y de click en el boton ```crear``
+3. Una vez se encuentre en la ventana de configuracion complete la informacion necesaria de la siguiente manera:
+ * ```Nombre/Name```: asigne un nombre explusivo para la SSH key.
+  * ```Grupo de regursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
+  * ```Grupo de recursos/Resource group```: Seleccione el grupo de recursos en el cual desplego la VPC y la subred creadas anteriormente.
+  * ```Ubicación/Region```: Seleccione la misma ubicación en la cual desplego la VPC y la subred creadas anteriormente.
+  * ```Llave publica/Public key```: Pegue el valor de la llave pubica obtenido en el numeral 1.
+4. Una vez haya completado toda la informacion necesaria de click en el boton ```Agregar SSH key/Add SSH key```.
+ 
+
+
 
 
 
