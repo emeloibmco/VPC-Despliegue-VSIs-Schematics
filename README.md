@@ -53,12 +53,18 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 
 ### SSH key
-1. para crear una ssh key es necesario obtener primero una llave publica la cual se asignara en la consifuración de seguridad para el acceso via ssh al servidor virtual, a continuación se muestra una de las opciones en las que se puede generar el par de llaves SSH para esto tenga en cuenta los siguientes pasos:
+1. para crear una ssh key es necesario obtener primero una llave publica, a continuación se muestra una de las opciones en las que se puede generar el par de llaves SSH para esto tenga en cuenta los siguientes pasos:
    * Acceda al *IBM Cloud Shell* e ingrese el siguiente comando: 
-   `ssh-keygen -t rsa -C "user_id" `
+   ```
+   ssh-keygen -t rsa -C "user_id" 
+   ```
    * Al colocar el comando anterior, en la consola se pide que especifique la ubicación, en este caso oprima la tecla Enter para que se guarde en la ubicación sugerida. Posteriormente, cuando se pida la ```Passphrase ```coloque una contraseña que pueda recordar o guárdela, ya que se utilizará más adelante.
-   * Muévase con el comando ```cd .ssh``` a la carpeta donde están los archivos ```id_rsa.pub``` y ```id_rsa```. Estos archivos contienen las claves públicas y privadas respectivamente.
-   * Copie el valor de la clave pública, utilice el comando: `cat id_rsa.pub`.
+   * Muévase con el comando 
+   ```cd .ssh``` a la carpeta donde están los archivos ```id_rsa.pub``` y ```id_rsa```. Estos archivos contienen las claves públicas y privadas respectivamente.
+   * Copie el valor de la clave pública, utilice el comando: 
+   ```
+   cat id_rsa.pub
+   ```
 
  <p align="center">
 <img width="800" alt="img8" src=images/PublicK.gif>
