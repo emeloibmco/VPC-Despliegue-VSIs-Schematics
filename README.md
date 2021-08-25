@@ -66,8 +66,8 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
    cat id_rsa.pub
    ```
  
- 2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear```
-3. Una vez se encuentre en la ventana de configuración complete la información necesaria de la siguiente manera:
+2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear```
+3. Cuando se encuentre en la ventana de configuración complete la información necesaria de la siguiente manera:
    * ```Nombre/Name```: asigne un nombre exclusivo para la SSH key.
    * ```Grupo de recursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
    * ```Grupo de recursos/Resource group```: Seleccione el grupo de recursos en el cual desplego la VPC y la subred creadas anteriormente.
