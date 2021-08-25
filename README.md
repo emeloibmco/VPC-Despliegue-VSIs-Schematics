@@ -121,7 +121,7 @@ Ya que estan todos los campos de personalización completos, debe ir hasta la pa
 * ```Aplicar plan```: Cuando esté listo para realizar cambios en su entorno de nube, puede aplicar sus archivos de configuración de Terraform. Para ejecutar las acciones que se especifican en sus archivos de configuración, Schematics utiliza el complemento IBM Cloud Provider para Terraform.
 
 <p align="center">
-<img width="800" alt="img8" src=images/despliegue.gif>
+<img width="800" alt="img8" src=images/Despliegue.gif>
 </p>
 
 # Referencias 📖
