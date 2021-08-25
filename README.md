@@ -44,7 +44,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ### Subred
 1. Desde la pestaña de ```VPCs```seleccione la VPC que acabo de crear.
 2. Una vez en esta ventana seleccione la subred a la cual desea cambiarle el nombre, las subredes se encuentran enlistadas en la parte inferior de la ventana en la tabla subredes en esta VPC.
-3. En la ventana de la subred selección el icono de lápiz al lado del nombre para editarlo y cámbielo por el nombre que desee.
+3. En la ventana de la subred seleccione el icono de lápiz al lado del nombre para editarlo y cámbielo por el nombre que desee.
 4. Es necesario verificar que la subred se encuentre dentro de la VPC desplegada anteriormente y en la misma zona que esta (Dallas, Washington).
 
 <p align="center">
