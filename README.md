@@ -24,7 +24,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ## Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)
 
 ### VPC
-1. Desde el menú de navegación o menú de hamburguesa seleccione la pestaña ``Infraestructura VPC```.
+1. Desde el menú de navegación o menú de hamburguesa seleccione la pestaña ```Infraestructura VPC```.
 2. En esta pestaña, en la sección de red/network seleccione la opción de ```VPCs``` y de click en el botón de ```crear```.
 3. Una vez se encuentre en la ventana de configuración de la VPC complete la información necesaria de la siguiente manera:
 
