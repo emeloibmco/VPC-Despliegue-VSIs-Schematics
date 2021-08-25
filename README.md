@@ -56,17 +56,27 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 1. para crear una ssh key es necesario obtener primero una llave publica, para esto tenga en cuenta los siguientes pasos:
   * Acceda al *IBM Cloud Shell* e ingrese el siguiente comando: 
   `ssh-keygen -t rsa -C "user_id" `
-  * Al colocar el comando anterior, en la consola se pide que especifique la ubicación, en este caso oprima la tecla Enter para que se guarde en la ubicación sugerida. Posteriormente, cuando se pida la ```Passphrase ```coloque una constraseña que pueda recordar o guardela, ya que se utilizará más adelante.
+  * Al colocar el comando anterior, en la consola se pide que especifique la ubicación, en este caso oprima la tecla Enter para que se guarde en la ubicación sugerida. Posteriormente, cuando se pida la ```Passphrase ```coloque una contraseña que pueda recordar o guárdela, ya que se utilizará más adelante.
   * Muévase con el comando ```cd .ssh``` a la carpeta donde están los archivos ```id_rsa.pub``` y ```id_rsa```. Estos archivos contienen las claves públicas y privadas respectivamente.
   * Copie el valor de la clave pública, utilice el comando: `cat id_rsa.pub`.
- 2. Una vez obtinida la llave publica desde la pestaña de infraestructura VPC seleccione la opcion ```SSH keys```y de click en el boton ```crear``
-3. Una vez se encuentre en la ventana de configuracion complete la informacion necesaria de la siguiente manera:
- * ```Nombre/Name```: asigne un nombre explusivo para la SSH key.
-  * ```Grupo de regursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
+ 
+ <p align="center">
+<img width="800" alt="img8" src=images/PublicK.gif>
+</p>
+ 
+ 
+ 2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear``
+3. Una vez se encuentre en la ventana de configuración complete la información necesaria de la siguiente manera:
+ * ```Nombre/Name```: asigne un nombre exclusivo para la SSH key.
+  * ```Grupo de recursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
   * ```Grupo de recursos/Resource group```: Seleccione el grupo de recursos en el cual desplego la VPC y la subred creadas anteriormente.
   * ```Ubicación/Region```: Seleccione la misma ubicación en la cual desplego la VPC y la subred creadas anteriormente.
-  * ```Llave publica/Public key```: Pegue el valor de la llave pubica obtenido en el numeral 1.
-4. Una vez haya completado toda la informacion necesaria de click en el boton ```Agregar SSH key/Add SSH key```.
+  * ```Llave publica/Public key```: Pegue el valor de la llave púbica obtenido en el numeral 1.
+4. Una vez haya completado toda la información necesaria de click en el botón ```Agregar SSH key/Add SSH key```.
+
+ <p align="center">
+<img width="800" alt="img8" src=images/SSH_key.gif>
+</p>
  
 
 
