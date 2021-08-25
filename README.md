@@ -22,18 +22,24 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 <br />
 
 ## Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)
-### VPC
-1. Desde el menú de navegación o menú de hambuerguesa seleccione la pestaña ``Ìnfraestructura VPC```.
-2. En esta pestaña, en la seccion de red/network seleccione la opción de ```VPCs``` y de click en el boton de ```crear```.
-3. Una vez se encuentre en la ventana de configuracion de la VPC complete la información necesaria de la siguiente manera:
 
-  * ```Nombre/Name```: asigne un nombre explusivo para la VPC.
-  * ```Grupo de regursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
+### VPC
+1. Desde el menú de navegación o menú de hamburguesa seleccione la pestaña ``Infraestructura VPC```.
+2. En esta pestaña, en la sección de red/network seleccione la opción de ```VPCs``` y de click en el botón de ```crear```.
+3. Una vez se encuentre en la ventana de configuración de la VPC complete la información necesaria de la siguiente manera:
+
+  * ```Nombre/Name```: asigne un nombre exclusivo para la VPC.
+  * ```Grupo de recursos/Resource group```: Seleccione el grupo de recursos en el cual va a desplegar la VPN.
   * ```Ubicación/Region```: Seleccione la ubicación en la cual desea implementar la VPC (Dallas o Washington).
   * ```Grupo de seguridad predeterminado```: Deje seleccionadas las opciones Permitir SSH/Allow SSH y Permitir ping/Allow ping.
   * ```Prefijos de dirección predeterminados/default prefix for each zone```: Seleccione el campo, para poder trabajar posteriormente con estas subredes.
 
-4. Una vez haya terminado de llenar esta informacion de click en el botón ```Crear nube privada virtual/Create virtual private cloud```.
+4. Una vez haya terminado de llenar esta información de click en el botón ```Crear nube privada virtual/Create virtual private cloud```.
+
+
+<p align="center">
+<img width="800" alt="img8" src=images/VPC.gif>
+</p>
 
 ### Subred
 1. Desde la pestaña de ```VPCs```seleccione la VPC que acabo de crear.
