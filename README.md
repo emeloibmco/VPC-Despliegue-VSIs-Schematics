@@ -75,7 +75,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 4. Una vez haya completado toda la información necesaria de click en el botón ```Agregar SSH key/Add SSH key```.
 
  <p align="center">
-<img width="800" alt="img8" src=images/SSH_key.gif>
+<img width="800" alt="img8" src=images/SSH key.gif>
 </p>
  
 
