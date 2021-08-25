@@ -65,11 +65,6 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
    ```
    cat id_rsa.pub
    ```
-
- <p align="center">
-<img width="800" alt="img8" src=images/PublicK.gif>
-</p>
- 
  
  2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear```
 3. Una vez se encuentre en la ventana de configuración complete la información necesaria de la siguiente manera:
