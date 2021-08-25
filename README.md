@@ -133,9 +133,9 @@ Para evitar tener problemas al momento de generar y aplicar el plan de despliegu
     * ```Lista de contactos para seguimiento/contacts watchlist```: Aquí puede agregar a otro miembro del grupo, si lo desea, para que sea notificado del caso de soporte.
 8. Una vez complete esta información de click en el botón de ```siguiente``` esto lo llevara a la pestaña de resumen y aquí de click en el botón de ```enviar caso/Submit case``` para finalizar el caso en soporte.
 
-
-
-
+<p align="center">
+<img width="800" alt="img8" src=images/Soporte.gif>
+</p>
 
 ## Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
