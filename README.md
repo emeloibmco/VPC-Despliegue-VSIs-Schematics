@@ -148,6 +148,42 @@ Ya que estan todos los campos de personalización completos, debe ir hasta la pa
 <img width="800" alt="img8" src=images/Despliegue.gif>
 </p>
 
+## Acceder a la ultima VSI creada.
+Para poder ver la configuracion de la ultima VSI creada debe ingresar a la lista de recursos creados, para esto tenga en cuenta los siguientes pasos.
+1. desde el Dashboard de *IBM CLoud* seleccione el ```Menú de hamburguesa```y de click sobre ```Lista de recursos```.
+2. En esta nueva ventana podra encontrar todas las VSI desplegadas, en el caso de este tutorial solo se generaron 20 VSI por lo que la ultima sera cce-vsiwdc-10, para el caso de la prueba como se generan 100 VSI la ultima sera cce-vsiwdc-50.
+3. de click sobre el nombre de esta VSI, esto lo llevara a la ventana de configuracion de la VSI.
+
+4. Si desea Acceder a la VSI mediante SSH creada para la zona a la cual pertenece la VSI tenga en cuenta los siguientes pasos:
+    * Configure la IP Flotante. Para ello, haga click en la *VSI* implementada y en la sección de ```Interfaces de Red``` seleccione la opción ```editar```. 
+
+    * En la opción ```Dirección IP flotante``` seleccione la opción ```Reservar IP flotante```. Luego, de click en ```Guardar```. Después de esto debe poder visualizar la IP flotante de la *VSI* en la sección de ```Interfaces de Red```.
+    <p align="center"><img width="700" src="https://github.com/emeloibmco/VPC-Despliegue-VSI-Acceso-SSH/blob/main/Imagenes/ipflotante.gif"></p>
+
+    * En *IBM Cloud Shell* cambie la región y el grupo de recursos mediante los comandos:
+    ```
+    ibmcloud target -r <REGION>
+    ibmcloud target -g <GRUPO_RECURSOS>
+    ```
+    * Para visualizar en la linea de comandos, si la VSI ha sido creada correctamente, ingrese el siguiente comando:
+    ```
+    ibmcloud is instances
+    ```
+
+    * Conéctese a la *VSI* usando la clave privada y la IP flotante reservada anteriormente. Para ello utilice el comando: 
+    ```
+    ssh -i ./id_rsa root@<ip_flotante>
+    ```
+
+    *  Al colocar el comando anterior, en la consola se pide una confirmación para seguir con el acceso, ingrese ```yes```. Posteriormente, ingrese la ```Passphrase``` elegida anteriormente.
+
+    * Si desea asignar una nueva contraseña utilice el comando:
+    ```
+    passwd 
+    ```
+   
+
+
 # Referencias 📖
 
 * [Acerca de IBM Cloud Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics).
