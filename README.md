@@ -8,11 +8,11 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
 2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)](#Crear-y-configurar-una-VPC,-una-subred-y-una-ssh-key-en-cada-zona-(Dallas,-Washington))
-3. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#Crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
+3. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
 4. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
 5. [Crear un caso en soporte para aumentar la cuota de vCPUs por región](#crear-un-caso-en-soporte-para-aumentar-la-cuota-de-vcpus-por-región)
 6. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
-7. [Acceder a la ultima VSI creada]
+7. [Acceder a la ultima VSI creada](#acceder-a-la-ultima-vsi-creada)
 8. [Autores](#Autores-black_nib)
 <br />
 
