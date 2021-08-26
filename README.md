@@ -12,7 +12,8 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 4. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
 5. [Crear un caso en soporte para aumentar la cuota de vCPUs por región](#crear-un-caso-en-soporte-para-aumentar-la-cuota-de-vcpus-por-región)
 6. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
-7. [Autores](#Autores-black_nib)
+7. [Acceder a la ultima VSI creada]
+8. [Autores](#Autores-black_nib)
 <br />
 
 ## Pre Requisitos :pencil:
@@ -148,11 +149,12 @@ Ya que estan todos los campos de personalización completos, debe ir hasta la pa
 <img width="800" alt="img8" src=images/Despliegue.gif>
 </p>
 
-## Acceder a la ultima VSI creada.
-Para poder ver la configuracion de la ultima VSI creada debe ingresar a la lista de recursos creados, para esto tenga en cuenta los siguientes pasos.
+## Acceder a la ultima VSI creada
+Para poder ver la configuración de la ultima VSI creada debe ingresar a la lista de recursos creados, para esto tenga en cuenta los siguientes pasos.
 1. desde el Dashboard de *IBM CLoud* seleccione el ```Menú de hamburguesa```y de click sobre ```Lista de recursos```.
 2. En esta nueva ventana podra encontrar todas las VSI desplegadas, en el caso de este tutorial solo se generaron 20 VSI por lo que la ultima sera cce-vsiwdc-10, para el caso de la prueba como se generan 100 VSI la ultima sera cce-vsiwdc-50.
-3. de click sobre el nombre de esta VSI, esto lo llevara a la ventana de configuracion de la VSI.
+3. de click sobre el nombre de esta VSI, esto lo llevara a la ventana de configuración de la VSI.
+
 
 <p align="center">
 <img width="800" alt="img8" src=images/VSI.gif>
