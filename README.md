@@ -134,7 +134,7 @@ Para evitar tener problemas al momento de generar y aplicar el plan de despliegu
     * ```Descripción/Description```: La descripción del caso en ingles, esta debe contener la siguiente información:
       * Account number: número de cuenta
       * Region(s) and Availability Zone(s): regiones y zonas de disponibilidad del caso de soporte
-      * Environment: (Prod/Stage): Ambiente (usar Stage)
+      * Environment: (Prod/Stage): Ambiente (usar Prod)
       * JUSTIFICATION FOR REQUEST (REQUIRED): Ej: 'I need help in increasing the vCPU quota dor VPC from 200 vCPUS to 300 vCPUs'
     * ```Lista de contactos para seguimiento/contacts watchlist```: Aquí puede agregar a otro miembro del grupo, si lo desea, para que sea notificado del caso de soporte.
 8. Una vez complete esta información de click en el botón de ```siguiente``` esto lo llevara a la pestaña de resumen y aquí de click en el botón de ```enviar caso/Submit case``` para finalizar el caso en soporte.
