@@ -44,14 +44,20 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 </p>
 
 ### Subred
-1. Desde la pestaña de ```VPCs```seleccione la VPC que acabo de crear.
-2. Una vez en esta ventana seleccione la subred a la cual desea cambiarle el nombre, las subredes se encuentran enlistadas en la parte inferior de la ventana en la tabla subredes en esta VPC.
-3. En la ventana de la subred seleccione el icono de lápiz al lado del nombre para editarlo y cámbielo por el nombre que desee.
-4. Es necesario verificar que la subred se encuentre dentro de la VPC desplegada anteriormente y en la misma zona que esta (Dallas, Washington).
+El siguiente paso consiste en crear un Subred en la *VPC*. Para ello, en la sección de ```Red``` seleccione la opción ```Subredes``` y de click en el botón ```Crear```. Una vez le aparezca la ventana para la configuración y creación de la subred, complete lo siguiente:
 
-<p align="center">
-<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/SN.gif>
-</p>
+* ```Nombre```: asigne un nombre exclusivo para la subred.
+* ```Grupo de recursos```: seleccione el grupo de recursos en el cual va a trabajar (el mismo seleccionado en la creación de la *VPC*).
+* ```Ubicación```: seleccione la ubicación en la cual desea implementar la subred (la misma seleccionada en la creación de la *VPC*).
+* ```Nube privada virtual```: seleccione la *VPC* que creó anteriormente.
+* Los demás parámetros no los modifique, deje los valores establecidos por defecto.
+
+Cuando ya tenga todos los campos configurados de click en el botón ```Crear subred```.
+<p align="center"><img width="700" src="https://github.com/emeloibmco/VPC-Despliegue-VSI-Acceso-SSH/blob/main/Imagenes/subnet.gif"></p>
+
+6. Espere unos minutos mientras la subred aparece en estado disponible y asegúrese de tener seleccionada la región en la cual la implementó.
+
+<br />
 
 
 ### SSH key
