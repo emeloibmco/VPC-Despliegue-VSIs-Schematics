@@ -48,7 +48,7 @@ El siguiente paso consiste en crear un Subred en la *VPC*. Para ello, en la secc
 
 * ```Nombre```: asigne un nombre exclusivo para la subred.
 * ```Grupo de recursos```: seleccione el grupo de recursos en el cual va a trabajar (el mismo seleccionado en la creación de la *VPC*).
-* ```Ubicación```: seleccione la ubicación en la cual desea implementar la subred (la misma seleccionada en la creación de la *VPC*).
+* ```Ubicación```: seleccione la ubicación en la cual desea implementar la subred (la misma seleccionada en la creación de la *VPC*, Dallas#1 o Whashington#1).
 * ```Nube privada virtual```: seleccione la *VPC* que creó anteriormente.
 * Los demás parámetros no los modifique, deje los valores establecidos por defecto.
 
