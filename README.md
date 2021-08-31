@@ -40,7 +40,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 
 <p align="center">
-<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/VPC.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bac9220b89ca6363ba14967002f93f3bcf44530/VPC.gif>
 </p>
 
 ### Subred
