@@ -2,7 +2,7 @@ terraform {
   required_providers {
     ibm = {
       source = "IBM-Cloud/ibm"
-      version = "~> 1.29.0"
+      version = "~> 1.30.2"
     }
   }
 }
@@ -49,27 +49,6 @@ data "ibm_is_subnet" "dallas_subnet" {
 }
 
 ##############################################################################
-# Despliegue de servidores en dallas
-##############################################################################
-
-resource "ibm_is_instance" "cce-vsi-dal" {
-  provider = ibm.south
-  count    = var.count-vsi/2
-  name    = "cce-vsidal-${count.index + 1}"
-  image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
-  profile = "cx2-4x8"
-
-  primary_network_interface {
-    subnet = data.ibm_is_subnet.dallas_subnet.id
-  }
-
-  vpc       = data.ibm_is_vpc.dallas_vpc.id
-  zone      = "us-south-1"
-  keys      = [data.ibm_is_ssh_key.sshkeydall.id]
-  resource_group = data.ibm_resource_group.group.id
-}
-
-##############################################################################
 # Despliegue de recursos en WDC
 ##############################################################################
 
@@ -103,6 +82,27 @@ data "ibm_is_vpc" "wdc_vpc" {
 data "ibm_is_subnet" "wdc_subnet" {
   provider = ibm.east
   name = var.name_subnet_wdc
+}
+
+##############################################################################
+# Despliegue de servidores en dallas
+##############################################################################
+
+resource "ibm_is_instance" "cce-vsi-dal" {
+  provider = ibm.south
+  count    = var.count-vsi/2
+  name    = "cce-vsidal-${count.index + 1}"
+  image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
+  profile = "cx2-4x8"
+
+  primary_network_interface {
+    subnet = data.ibm_is_subnet.dallas_subnet.id
+  }
+
+  vpc       = data.ibm_is_vpc.dallas_vpc.id
+  zone      = "us-south-1"
+  keys      = [data.ibm_is_ssh_key.sshkeydall.id]
+  resource_group = data.ibm_resource_group.group.id
 }
 
 ##############################################################################
