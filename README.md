@@ -40,18 +40,24 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 
 <p align="center">
-<img width="800" alt="img8" src=images/VPC.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2b4d674a94203d40ae6ab955b9c909203e42ae9f/VPC.gif>
 </p>
 
 ### Subred
-1. Desde la pestaña de ```VPCs```seleccione la VPC que acabo de crear.
-2. Una vez en esta ventana seleccione la subred a la cual desea cambiarle el nombre, las subredes se encuentran enlistadas en la parte inferior de la ventana en la tabla subredes en esta VPC.
-3. En la ventana de la subred seleccione el icono de lápiz al lado del nombre para editarlo y cámbielo por el nombre que desee.
-4. Es necesario verificar que la subred se encuentre dentro de la VPC desplegada anteriormente y en la misma zona que esta (Dallas, Washington).
+El siguiente paso consiste en crear un Subred en la *VPC*. Para ello, en la sección de ```Red``` seleccione la opción ```Subredes``` y de click en el botón ```Crear```. Una vez le aparezca la ventana para la configuración y creación de la subred, complete lo siguiente:
 
-<p align="center">
-<img width="800" alt="img8" src=images/SN.gif>
-</p>
+* ```Nombre```: asigne un nombre exclusivo para la subred.
+* ```Grupo de recursos```: seleccione el grupo de recursos en el cual va a trabajar (el mismo seleccionado en la creación de la *VPC*).
+* ```Ubicación```: seleccione la ubicación en la cual desea implementar la subred (la misma seleccionada en la creación de la *VPC*, Dallas#1 o Whashington#1).
+* ```Nube privada virtual```: seleccione la *VPC* que creó anteriormente.
+* Los demás parámetros no los modifique, deje los valores establecidos por defecto.
+
+Cuando ya tenga todos los campos configurados de click en el botón ```Crear subred```.
+<p align="center"><img width="700" src="https://github.com/emeloibmco/VPC-Despliegue-VSI-Acceso-SSH/blob/main/Imagenes/subnet.gif"></p>
+
+6. Espere unos minutos mientras la subred aparece en estado disponible y asegúrese de tener seleccionada la región en la cual la implementó.
+
+<br />
 
 
 ### SSH key
@@ -78,7 +84,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 4. Una vez haya completado toda la información necesaria de click en el botón ```Agregar SSH key/Add SSH key```.
 
  <p align="center">
-<img width="800" alt="img8" src=images/SSHkey.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/SSHkey.gif>
 </p>
  
 > Nota: `Para acceder a las instancias creadas con la llave publica configurada anteriormente, es necesario conservar localmente la componente privada de la llave`
@@ -100,7 +106,7 @@ Presione ```SIGUIENTE```  > Agregue un nombre para el espacio de trabajo > Selec
 Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 
 <p align="center">
-<img width="800" alt="img8" src=images/workspacecreate.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/workspacecreate.gif>
 </p>
 
 ## Configurar las variables de personalización de la plantilla de terraform
@@ -116,7 +122,7 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
 <p align="center">
-<img width="800" alt="img8" src=images/variables.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/variables.gif>
 </p>
 
 ## Crear un caso en soporte para aumentar la cuota de vCPUs por región 
@@ -140,7 +146,7 @@ Para evitar tener problemas al momento de generar y aplicar el plan de despliegu
 8. Una vez complete esta información de click en el botón de ```siguiente``` esto lo llevara a la pestaña de resumen y aquí de click en el botón de ```enviar caso/Submit case``` para finalizar el caso en soporte.
 
 <p align="center">
-<img width="800" alt="img8" src=images/Soporte.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Soporte.gif>
 </p>
 
 ## Generar y Aplicar el plan de despliegue de los servidores VPC
@@ -150,7 +156,7 @@ Ya que estan todos los campos de personalización completos, debe ir hasta la pa
 * ```Aplicar plan```: Cuando esté listo para realizar cambios en su entorno de nube, puede aplicar sus archivos de configuración de Terraform. Para ejecutar las acciones que se especifican en sus archivos de configuración, Schematics utiliza el complemento IBM Cloud Provider para Terraform.
 
 <p align="center">
-<img width="800" alt="img8" src=images/Despliegue.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Despliegue.gif>
 </p>
 
 ## Acceder a la ultima VSI creada
@@ -161,7 +167,7 @@ Para poder ver la configuración de la ultima VSI creada debe ingresar a la list
 
 
 <p align="center">
-<img width="800" alt="img8" src=images/VSI.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/VSI.gif>
 </p>
 
 4. Si desea Acceder a la VSI mediante SSH creada para la zona a la cual pertenece la VSI tenga en cuenta los siguientes pasos:
