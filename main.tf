@@ -56,6 +56,7 @@ data "ibm_is_subnet" "dallas_subnet" {
 provider "ibm" {
   alias  = "east"
   region = "us-east"
+  max_retries = 20
 }
 
 ##############################################################################
@@ -83,7 +84,6 @@ data "ibm_is_vpc" "wdc_vpc" {
 data "ibm_is_subnet" "wdc_subnet" {
   provider = ibm.east
   name = var.name_subnet_wdc
-  max_retries = 20
 }
 
 ##############################################################################
