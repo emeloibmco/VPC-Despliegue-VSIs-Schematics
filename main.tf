@@ -14,6 +14,7 @@ terraform {
 provider "ibm" {
   alias  = "south"
   region = "us-south"
+  max_retries = 20
 }
 
 data "ibm_resource_group" "group" {
@@ -82,6 +83,7 @@ data "ibm_is_vpc" "wdc_vpc" {
 data "ibm_is_subnet" "wdc_subnet" {
   provider = ibm.east
   name = var.name_subnet_wdc
+  max_retries = 20
 }
 
 ##############################################################################
