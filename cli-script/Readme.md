@@ -37,3 +37,26 @@ Esto lo llevara de nuevo a la ventana del *IBM Cloud shell*
 ./script.sh
 ```
 
+<p align="center">
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/861a86819927494b83200d8642051d66c6000696/Shell.png>
+</p>
+
+## Eliminar las VSIs
+para poder eliminar las VSI generadas anteriormente tenga en cuenta los siguientes pasos:
+
+1. Acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
+```
+wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/delete-script.sh
+```
+2. Una vez realizado esto utilice el siguiente comando el cual le otroga permisos al archivo para poder ejecutarlo
+``` 
+chmod +x delete-script.sh
+```
+3. Finalmente ejecute el script para eliminar las 100 VSIs con el sigueinte comando
+```
+./delete-script.sh
+```
+
+<p align="center">
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/68a446690f30fe38f0891055d2a2d31866c56290/delete.png>
+</p>
