@@ -4,7 +4,6 @@
 La presente guía esta enfocada en crear un despliegue de un grupo de servidores virtuales en un ambiente de nube privada virtual (VPC) en una cuenta de IBM Cloud.
 
 <br />
-
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
 2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Osaka, Tokio)](#crear-y-configurar-una-vpc-una-subred-y-una-ssh-key-en-cada-zona-dallas-washington)
