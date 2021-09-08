@@ -30,7 +30,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 2. En esta pestaña, en la sección de red/network seleccione la opción de ```VPCs``` y de click en el botón de ```crear```.
 3. Una vez se encuentre en la ventana de configuración de la VPC complete la información necesaria de la siguiente manera:
 
-   * ```Nombre/Name```: asigne un nombre exclusivo para la VPC (para la VPC ubicada en Osaka utilice el nombre ```vpc-demo-osa``` y para la VPC ubicada en Tokio utilice el nombre ```vpc-demo-tok```.
+   * ```Nombre/Name```: asignele un nombre a la VPC, **para la VPC ubicada en Osaka utilice el nombre ```vpc-demo-osa``` y para la VPC ubicada en Tokio utilice el nombre ```vpc-demo-tok```**.
    * ```Grupo de recursos/Resource group```: Seleccione el grupo de recursos en el cual va a desplegar la VPN.
    * ```Ubicación/Region```: Seleccione la ubicación en la cual desea implementar la VPC (Osaka o Tokio).
    * ```Grupo de seguridad predeterminado```: Deje seleccionadas las opciones Permitir SSH/Allow SSH y Permitir ping/Allow ping.
@@ -46,7 +46,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ### Subred
 El siguiente paso consiste en crear un Subred en la *VPC*. Para ello, en la sección de ```Red``` seleccione la opción ```Subredes``` y de click en el botón ```Crear```. Una vez le aparezca la ventana para la configuración y creación de la subred, complete lo siguiente:
 
-* ```Nombre```: asigne un nombre exclusivo para la subred (para la subred ubicada en Osaka utilice el nombre ```subred-demo-osa```y para la subred ubicada en Tokio utilice el nombre ```subred-demo-tok```.
+* ```Nombre```: asignele un nombre a la subred, **para la subred ubicada en Osaka utilice el nombre ```subred-demo-osa```y para la subred ubicada en Tokio utilice el nombre ```subred-demo-tok```**.
 * ```Grupo de recursos```: seleccione el grupo de recursos en el cual va a trabajar (el mismo seleccionado en la creación de la *VPC*).
 * ```Ubicación```: seleccione la ubicación en la cual desea implementar la subred (la misma seleccionada en la creación de la *VPC*, Osaka#1 o Tokio#1).
 * ```Nube privada virtual```: seleccione la *VPC* que creó anteriormente.
@@ -76,7 +76,7 @@ Cuando ya tenga todos los campos configurados de click en el botón ```Crear sub
  
 2. Una vez obtenida la llave publica desde la pestaña de infraestructura VPC seleccione la opción ```SSH keys```y de click en el botón ```crear```
 3. Cuando se encuentre en la ventana de configuración complete la información necesaria de la siguiente manera:
-   * ```Nombre/Name```: asigne un nombre exclusivo para la SSH key (para la SSH key ubicada en Osaka utilice el nombre ```key-demo-osa```y para la SSH key ubicada en Tokio utilice el nombre ```key-demo-tok```.
+   * ```Nombre/Name```: asignele un nombre a la SSH key, **para la SSH key ubicada en Osaka utilice el nombre ```key-demo-osa```y para la SSH key ubicada en Tokio utilice el nombre ```key-demo-tok```**.
    * ```Grupo de recursos/Resource group```: Seleecione el grupo de recursos en el cual va a desplegar la VPN.
    * ```Grupo de recursos/Resource group```: Seleccione el grupo de recursos en el cual desplego la VPC y la subred creadas anteriormente.
    * ```Ubicación/Region```: Seleccione la misma ubicación en la cual desplego la VPC y la subred creadas anteriormente.
