@@ -1,47 +1,61 @@
 #!/bin/bash
-delete=""
-delete2=""
 
-# Variables necesarias para el despliegue
-# Dallas
-vpcdal="deploy100vsidal"
-subnetdal="deploy100vsidal-subnet"
-keydal="dalkey"
+#####################################################################################################
+# Variables de despliegue
+#####################################################################################################
 
-# Washington
-vpcwdc="deploy100vsiwdc"
-subnetwdc="deploy100vsiwdc-subnet"
-keywdc="wdckey"
+#Regiones de despliegue
+Primary="jp-osa"
+Secondary="jp-tok"
+BaseName="cce-vsi-provisioning"
+
+# Primary
+vpcosa="vpc-demo-osa"
+subnetosa="subnet-demo-osa"
+keyosa="key-demo-osa"
+
+# Secondary
+vpctok="vpc-demo-tok"
+subnettok="subnet-demo-tok"
+keytok="key-demo-tok"
 
 resourcegroup="modernizacion-rg"
 
-profile="bx2-2x8"
-ibmcloud target -r us-south
-imagedalid=$(ibmcloud is images | grep -i "ibm-centos-8.*available.*amd64.*public" | cut -d" " -f1)
-vpcdalid=$(ibmcloud is vpcs | grep -i $vpcdal | cut -d" " -f1)
-keydalid=$(ibmcloud is keys | grep -i $keydal | cut -d" " -f1)
-subnetdalid=$(ibmcloud is subnets | grep -i $subnetdal | cut -d" " -f1)
+#####################################################################################################
+# No editar
+#####################################################################################################
+
+idsprimary=""
+idssecondary=""
+profile="bx2-4x16"
+ibmcloud target -r $primary
+imageosaid=$(ibmcloud is images | grep -i "ibm-centos-8.*available.*amd64.*public" | cut -d" " -f1)
+vpcosaid=$(ibmcloud is vpcs | grep -i $vpcosa | cut -d" " -f1)
+keyosaid=$(ibmcloud is keys | grep -i $keyosa | cut -d" " -f1)
+subnetosaid=$(ibmcloud is subnets | grep -i $subnetosa | cut -d" " -f1)
 
 for i in {1..10}
 do
-   var1dal=$(ibmcloud is instance-create cce-dall-vsis-$i $vpcdalid us-south-1 bx2-2x8 $subnetdalid --image-id $imagedalid --key-ids $keydalid --resource-group-name $resourcegroup)
-   var2dal=${var1dal/Name */}
-   var2dal=${var2dal/ /}
-   delete="${var2dal/*ID /} $delete"
+   var1osa=$(ibmcloud is instance-create $BaseName-primary-$i $vpcosaid $Primary-1 $profile $subnetosaid --image-id $imageosaid --key-ids $keyosaid --resource-group-name $resourcegroup)
+   echo "Instancia $BaseName-primary-$i Creada"
+   var2osa=${var1osa/Name */}
+   var2osa=${var2osa/ /}
+   idsprimary="$idsprimary\n${var2osa/*ID /}"
 done
-echo $delete
+echo -e $idsprimary > vsis-primary-ids.txt
 
-ibmcloud target -r us-east
-imagewdcid=$(ibmcloud is images | grep -i "ibm-centos-8.*available.*amd64.*public" | cut -d" " -f1)
-vpcwdcid=$(ibmcloud is vpcs | grep -i $vpcwdc | cut -d" " -f1)
-keywdcid=$(ibmcloud is keys | grep -i $keywdc | cut -d" " -f1)
-subnetwdcid=$(ibmcloud is subnets | grep -i $subnetwdc | cut -d" " -f1)
+ibmcloud target -r $secondary
+imagetokid=$(ibmcloud is images | grep -i "ibm-centos-8.*available.*amd64.*public" | cut -d" " -f1)
+vpctokid=$(ibmcloud is vpcs | grep -i $vpctok | cut -d" " -f1)
+keytokid=$(ibmcloud is keys | grep -i $keytok | cut -d" " -f1)
+subnettokid=$(ibmcloud is subnets | grep -i $subnettok | cut -d" " -f1)
 
 for i in {1..10}
 do
-   var1wdc=$(ibmcloud is instance-create cce-wdc-vsis-$i $vpcwdcid us-east-1 bx2-2x8 $subnetwdcid --image-id $imagewdcid --key-ids $keywdcid --resource-group-name $resourcegroup)
-   var2wdc=${var1wdc/Name */}
-   var2wdc=${var2wdc/ /}
-   delete2="${var2wdc/*ID /} $delete2"
+   var1tok=$(ibmcloud is instance-create $BaseName-secondary-$i $vpctokid $secondary-1 $profile $subnettokid --image-id $imagetokid --key-ids $keytokid --resource-group-name $resourcegroup)
+   echo "Instancia $BaseName-secondary-$i Creada"
+   var2tok=${var1tok/Name */}
+   var2tok=${var2tok/ /}
+   idssecondary="$idssecondary\n${var2tok/*ID /}"
 done
-echo $delete2
+echo -e $idssecondary > vsis-primary-ids.txt
