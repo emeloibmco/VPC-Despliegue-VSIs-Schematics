@@ -9,7 +9,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
 2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Osaka, Tokio)](#crear-y-configurar-una-vpc-una-subred-y-una-ssh-key-en-cada-zona-dallas-washington)
 3. [Generar el despliegue de las VSIs mediante un script](#generar-el-despliegue-de-las-vsis-mediante-un-script)
-4. [Eliminar las VSIs]
+4. [Eliminar las VSIs](#eliminar-las-vsis)
 7. [Acceder a la ultima VSI creada](#acceder-a-la-ultima-vsi-creada)
 8. [Autores](#Autores-black_nib)
 <br />
