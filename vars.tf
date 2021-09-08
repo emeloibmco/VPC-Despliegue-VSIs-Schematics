@@ -1,25 +1,35 @@
-variable "ssh_keyname_dall" {
-  description = "ssh key name dallas"
+variable "region-pr" {
+  default = "jp-osa"
+  description = "ssh key name primary region"
 }
 
-variable "ssh_keyname_wdc" {
-  description = "ssh key name WDC"
+variable "region-sec" {
+  default = "jp-tok"
+  description = "ssh key name secondary region"
 }
 
-variable "name_vpc_dallas" {
-  description = "vpc dallas name"
+variable "ssh_keyname_pr" {
+  description = "ssh key name of primary region"
 }
 
-variable "name_vpc_wdc" {
-  description = "vpc wdc name"
+variable "ssh_keyname_sec" {
+  description = "ssh key name sec"
 }
 
-variable "name_subnet_dallas" {
-  description = "subnet dallas name"
+variable "name_vpc_pr" {
+  description = "vpc name primary region"
 }
 
-variable "name_subnet_wdc" {
-  description = "subnet wdc name"
+variable "name_vpc_sec" {
+  description = "vpc name secondary region"
+}
+
+variable "name_subnet_pr" {
+  description = "subnet name primary region"
+}
+
+variable "name_subnet_sec" {
+  description = "subnet name secondary region"
 }
 
 variable "count-vsi" {
