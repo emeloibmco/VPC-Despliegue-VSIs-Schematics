@@ -161,15 +161,14 @@ chmod +x delete-script.sh
 ## Acceder a la ultima VSI creada
 Para poder ver la configuración de la ultima VSI creada debe ingresar a la lista de recursos creados, para esto tenga en cuenta los siguientes pasos.
 1. desde el Dashboard de *IBM CLoud* seleccione el ```Menú de hamburguesa```y de click sobre ```Lista de recursos```.
-2. En esta nueva ventana podra encontrar todas las VSI desplegadas, en el caso de este tutorial solo se generaron 20 VSI por lo que la ultima sera cce-vsiwdc-10, para el caso de la prueba como se generan 100 VSI la ultima sera cce-vsiwdc-50.
-3. de click sobre el nombre de esta VSI, esto lo llevara a la ventana de configuración de la VSI.
+2. de click sobre el nombre de esta VSI, esto lo llevara a la ventana de configuración de la VSI.
 
 
 <p align="center">
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/VSI.gif>
 </p>
 
-4. Si desea Acceder a la VSI mediante SSH creada para la zona a la cual pertenece la VSI tenga en cuenta los siguientes pasos:
+3. Si desea Acceder a la VSI mediante SSH creada para la zona a la cual pertenece la VSI tenga en cuenta los siguientes pasos:
     * Configure la IP Flotante. Para ello, haga click en la *VSI* implementada y en la sección de ```Interfaces de Red``` seleccione la opción ```editar```. 
 
     * En la opción ```Dirección IP flotante``` seleccione la opción ```Reservar IP flotante```. Luego, de click en ```Guardar```. Después de esto debe poder visualizar la IP flotante de la *VSI* en la sección de ```Interfaces de Red```.
