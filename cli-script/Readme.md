@@ -11,7 +11,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 3. [Generar el despliegue de las VSIs mediante un script](#generar-el-despliegue-de-las-vsis-mediante-un-script)
 4. [Eliminar las VSIs](#eliminar-las-vsis)
 7. [Acceder a la ultima VSI creada](#acceder-a-la-ultima-vsi-creada)
-8. [Autores](
+8. [Autores](#autores-black_nib)
 <br />
 
 ## Pre Requisitos :pencil:
