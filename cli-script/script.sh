@@ -5,8 +5,8 @@
 #####################################################################################################
 
 #Regiones de despliegue
-Primary="jp-osa"
-Secondary="jp-tok"
+primary="jp-osa"
+secondary="jp-tok"
 BaseName="cce-vsi-provisioning"
 
 # Primary
@@ -58,4 +58,4 @@ do
    var2tok=${var2tok/ /}
    idssecondary="$idssecondary\n${var2tok/*ID /}"
 done
-echo -e $idssecondary > vsis-primary-ids.txt
+echo -e $idssecondary > vsis-secondary-ids.txt
