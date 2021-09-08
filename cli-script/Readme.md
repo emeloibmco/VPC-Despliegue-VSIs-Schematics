@@ -1,5 +1,5 @@
 ```
-wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/new/main/cli-script/script.sh
+wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/script.sh
 chmod +x script.sh
 ```
 
