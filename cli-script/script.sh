@@ -19,7 +19,7 @@ vpctok="vpc-demo-tok"
 subnettok="subnet-demo-tok"
 keytok="key-demo-tok"
 
-resourcegroup="modernizacion-rg"
+resourcegroup="vpc-demo-rg"
 
 #####################################################################################################
 # No editar
@@ -36,11 +36,11 @@ subnetosaid=$(ibmcloud is subnets | grep -i $subnetosa | cut -d" " -f1)
 
 for i in {1..10}
 do
-   var1osa=$(ibmcloud is instance-create $BaseName-primary-$i $vpcosaid $Primary-1 $profile $subnetosaid --image-id $imageosaid --key-ids $keyosaid --resource-group-name $resourcegroup)
+   var1osa=$(ibmcloud is instance-create $BaseName-primary-$i $vpcosaid $primary-1 $profile $subnetosaid --image-id $imageosaid --key-ids $keyosaid --resource-group-name $resourcegroup)
    echo "Instancia $BaseName-primary-$i Creada"
    var2osa=${var1osa/Name */}
    var2osa=${var2osa/ /}
-   idsprimary="$idsprimary\n${var2osa/*ID /}"
+   idsprimary="${var2osa/*ID /}\n$idsprimary"
 done
 echo -e $idsprimary > vsis-primary-ids.txt
 
@@ -56,6 +56,6 @@ do
    echo "Instancia $BaseName-secondary-$i Creada"
    var2tok=${var1tok/Name */}
    var2tok=${var2tok/ /}
-   idssecondary="$idssecondary\n${var2tok/*ID /}"
+   idssecondary="${var2tok/*ID /}\n$idssecondary"
 done
 echo -e $idssecondary > vsis-secondary-ids.txt
