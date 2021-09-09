@@ -176,14 +176,27 @@ Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 </p>
 
 ### Configurar las variables de personalización de la plantilla de terraform
+al igual que en el numeral anterior el despliegue de las 100 VSIs se realizara en las regiones de Osaka y tokio, antes de comenzar es necesario verificar que la creacion de los recursos neceasrios se haya realizado adecuadamente y que cada una de estas variables tenga el nombre adecuado, estos se precentan a continuacion:
+      <br />
+
+      | **VARIABLE**| **NOMBRE** |
+      | ------------- | :---: |
+      | VPC Osaka        | vpc-demo-osa          |     
+      | VPC Tokio        | vpc-demo-tok         |     
+      | Subred Osaka        | subnet-demo-osa           |     
+      | Subred Tokio        | subnet-demo-tok           |     
+      | SSH key Osaka        | key-demo-osa           |     
+      | SSH key Tokio         | key-demo-tok       | 
+
+      <br />
 Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite personalizar el espacio de trabajo allí debe ingresar la siguiente información:
 
-* ```ssh_keyname_dall```: Ingrese el nombre de la llave ssh creada en Dallas anteriormente.
-* ```ssh_keyname_wdc```: Ingrese el nombre de la llave ssh creada en Washington anteriormente.
-* ```name_vpc_dallas```: Ingrese el nombre de la VPC desplegada en Dallas anteriormente.
-* ```name_vpc_wdc```: Ingrese el nombre de la VPC desplegada en Washington anteriormente.
-* ```name_subnet_dallas```: Ingrese el nombre de la subred desplegada en la VPC de Dallas anteriormente.
-* ```name_subnet_wdc```: Ingrese el nombre de la subred desplegada en la VPC de Washington anteriormente.
+* ```ssh_keyname_pr```: Ingrese el nombre de la llave ssh creada en Osaka anteriormente.
+* ```ssh_keyname_sec```: Ingrese el nombre de la llave ssh creada en Tokio anteriormente.
+* ```name_vpc_pr```: Ingrese el nombre de la VPC desplegada en Osaka anteriormente.
+* ```name_vpc_sec```: Ingrese el nombre de la VPC desplegada en Tokio anteriormente.
+* ```name_subnet_pr```: Ingrese el nombre de la subred desplegada en la VPC de Osaka anteriormente.
+* ```name_subnet_sec```: Ingrese el nombre de la subred desplegada en la VPC de Tokio anteriormente.
 * ```count-vsi```: Esta variable le permite establecer el numero de servidores virtuales que va a crear, debe ingresar un numero par ya que se despliegua con una distribución de dos regiones de disponibilidad
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
