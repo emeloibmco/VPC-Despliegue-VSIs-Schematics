@@ -8,7 +8,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
 2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Osaka, Tokio)](#crear-y-configurar-una-vpc-una-subred-y-una-ssh-key-en-cada-zona-dallas-washington)
-3. [Generar el despliegue de las VSIs mediante un script (Primera opción)](#generar-el-despliegue-de-las-vsis-mediante-un-script)
+3. [Generar el despliegue de las VSIs mediante un script (Primera opción)](#generar-el-despliegue-de-las-vsis-mediante-un-script-primera-opción)
     * [Eliminar las VSIs mediante un script](#eliminar-las-vsis-meciante-un-script)
 4. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics (segunda opción)]
     * [Configurar las variables de personalización de la plantilla de terraform]
