@@ -268,3 +268,7 @@ Para poder ver la configuración de la ultima VSI creada debe ingresar a la list
 # Referencias 📖
 
 * [Acerca de IBM Cloud Schematics](https://cloud.ibm.com/docs/schematics?topic=schematics-about-schematics).
+
+## Autores :black_nib:
+Equipo IBM Cloud Tech Sales Colombia.
+<br />
