@@ -177,18 +177,18 @@ Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 
 ### Configurar las variables de personalización de la plantilla de terraform
 al igual que en el numeral anterior el despliegue de las 100 VSIs se realizara en las regiones de Osaka y tokio, antes de comenzar es necesario verificar que la creacion de los recursos neceasrios se haya realizado adecuadamente y que cada una de estas variables tenga el nombre adecuado, estos se precentan a continuacion:
-      <br />
+   <br />
 
-      | **VARIABLE**| **NOMBRE** |
-      | ------------- | :---: |
-      | VPC Osaka        | vpc-demo-osa          |     
-      | VPC Tokio        | vpc-demo-tok         |     
-      | Subred Osaka        | subnet-demo-osa           |     
-      | Subred Tokio        | subnet-demo-tok           |     
-      | SSH key Osaka        | key-demo-osa           |     
-      | SSH key Tokio         | key-demo-tok       | 
+   | **VARIABLE**| **NOMBRE** |
+   | ------------- | :---: |
+   | VPC Osaka        | vpc-demo-osa          |     
+   | VPC Tokio        | vpc-demo-tok         |     
+   | Subred Osaka        | subnet-demo-osa           |     
+   | Subred Tokio        | subnet-demo-tok           |     
+   | SSH key Osaka        | key-demo-osa           |     
+   | SSH key Tokio         | key-demo-tok       | 
 
-      <br />
+   <br />
 Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite personalizar el espacio de trabajo allí debe ingresar la siguiente información:
 
 * ```ssh_keyname_pr```: Ingrese el nombre de la llave ssh creada en Osaka anteriormente.
@@ -201,7 +201,7 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
 <p align="center">
-<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/variables.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Var.gif>
 </p>
 
 ### Crear un caso en soporte para aumentar la cuota de vCPUs por región 
