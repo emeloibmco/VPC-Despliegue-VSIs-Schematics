@@ -11,7 +11,7 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 3. [Generar el despliegue de las VSIs mediante un script (Primera opción)](#generar-el-despliegue-de-las-vsis-mediante-un-script-primera-opción)
     * [Eliminar las VSIs mediante un script](#eliminar-las-vsis-mediante-un-script)
 4. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics (segunda opción)](#crear-y-configurar-un-espacio-de-trabajo-en-ibm-cloud-schematics-segunda-opción)
-    * [Configurar las variables de personalización de la plantilla de terraform]
+    * [Configurar las variables de personalización de la plantilla de terraform](#configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
     * [Crear un caso en soporte para aumentar la cuota de vCPUs por región]
     * [Generar y Aplicar el plan de despliegue de los servidores VPC]
 7. [Acceder a la ultima VSI creada](#acceder-a-la-ultima-vsi-creada)
