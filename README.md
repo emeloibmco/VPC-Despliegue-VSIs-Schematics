@@ -96,18 +96,18 @@ Cuando ya tenga todos los campos configurados de click en el botón ```Crear sub
 Para generar el despliegue los servidores de manera rapida tenga en cuenta los siguientes pasos:
 
 1. Teniendo en cuenta que el despliegue de las 100 VSIs se realizara en las regiones de Osaka y tokio, antes de comenzar es necesario verificar que la creacion de los recursos neceasrios se haya realizado adecuadamente y que cada una de estas variables tenga el nombre adecuado, estos se precentan a continuacion:
-<br />
+      <br />
 
-| **VARIABLE**| **NOMBRE** |
-| ------------- | :---: |
-| VPC Osaka        | vpc-demo-osa          |     
-| VPC Tokio        | vpc-demo-tok         |     
-| Subred Osaka        | subnet-demo-osa           |     
-| Subred Tokio        | subnet-demo-tok           |     
-| SSH key Osaka        | key-demo-osa           |     
-| SSH key Tokio         | key-demo-tok       | 
+      | **VARIABLE**| **NOMBRE** |
+      | ------------- | :---: |
+      | VPC Osaka        | vpc-demo-osa          |     
+      | VPC Tokio        | vpc-demo-tok         |     
+      | Subred Osaka        | subnet-demo-osa           |     
+      | Subred Tokio        | subnet-demo-tok           |     
+      | SSH key Osaka        | key-demo-osa           |     
+      | SSH key Tokio         | key-demo-tok       | 
 
-<br />
+      <br />
 2. Luego de esto acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
 ```
 wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/script.sh
@@ -177,6 +177,7 @@ Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 
 ### Configurar las variables de personalización de la plantilla de terraform
 al igual que en el numeral anterior el despliegue de las 100 VSIs se realizara en las regiones de Osaka y tokio, antes de comenzar es necesario verificar que la creacion de los recursos neceasrios se haya realizado adecuadamente y que cada una de estas variables tenga el nombre adecuado, estos se precentan a continuacion:
+
    <br />
 
    | **VARIABLE**| **NOMBRE** |
@@ -189,6 +190,7 @@ al igual que en el numeral anterior el despliegue de las 100 VSIs se realizara e
    | SSH key Tokio         | key-demo-tok       | 
 
    <br />
+   
 Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite personalizar el espacio de trabajo allí debe ingresar la siguiente información:
 
 * ```ssh_keyname_pr```: Ingrese el nombre de la llave ssh creada en Osaka anteriormente.
