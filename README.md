@@ -1,4 +1,4 @@
-# VPC Despliegue VSIs Schematics ☁
+# VPC Despliegue VSIs  ☁
 *IBM® Cloud Schematics* 
 
 La presente guía esta enfocada en crear un despliegue de un grupo de servidores virtuales en un ambiente de nube privada virtual (VPC) en una cuenta de IBM Cloud.
@@ -7,13 +7,15 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
-2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)](#crear-y-configurar-una-vpc-una-subred-y-una-ssh-key-en-cada-zona-dallas-washington)
-3. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics](#crear-y-configurar-un-espacio-de-trabajo-en-IBM-Cloud-Schematics)
-4. [Configurar las variables de personalización de la plantilla de terraform](#Configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
-5. [Crear un caso en soporte para aumentar la cuota de vCPUs por región](#crear-un-caso-en-soporte-para-aumentar-la-cuota-de-vcpus-por-región)
-6. [Generar y Aplicar el plan de despliegue de los servidores VPC](#Generar-y-apicar-el-plan-de-despliegue-de-los-servidores-VPC)
+2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Osaka, Tokio)](#crear-y-configurar-una-vpc-una-subred-y-una-ssh-key-en-cada-zona-dallas-washington)
+3. [Generar el despliegue de las VSIs mediante un script (Primera opción)](#generar-el-despliegue-de-las-vsis-mediante-un-script)
+    * [Eliminar las VSIs mediante un script](#eliminar-las-vsis-meciante-un-script)
+4. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics (segunda opción)]
+    * [Configurar las variables de personalización de la plantilla de terraform]
+    * [Crear un caso en soporte para aumentar la cuota de vCPUs por región]
+    * [Generar y Aplicar el plan de despliegue de los servidores VPC]
 7. [Acceder a la ultima VSI creada](#acceder-a-la-ultima-vsi-creada)
-8. [Autores](#Autores-black_nib)
+8. [Autores](#autores-black_nib)
 <br />
 
 ## Pre Requisitos :pencil:
@@ -89,9 +91,72 @@ Cuando ya tenga todos los campos configurados de click en el botón ```Crear sub
  
 > Nota: `Para acceder a las instancias creadas con la llave publica configurada anteriormente, es necesario conservar localmente la componente privada de la llave`
 
+## Generar el despliegue de las VSIs mediante un script (Primera opción)
+Para generar el despliegue los servidores de manera rapida tenga en cuenta los siguientes pasos:
 
-## Crear y configurar un espacio de trabajo en IBM Cloud Schematics
-Para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de <a href="https://cloud.ibm.com/schematics/workspaces">IBM Cloud Schematics</a> y dar click en ```CREAR ESPACIO DE TRABAJO```, una vez hecho esto aparecera una ventana en la que debera diligenciar la siguiente información.
+1. Teniendo en cuenta que el despliegue de las 100 VSIs se realizara en las regiones de Osaka y tokio, antes de comenzar es necesario verificar que la creacion de los recursos neceasrios se haya realizado adecuadamente y que cada una de estas variables tenga el nombre adecuado, estos se precentan a continuacion:
+      <br />
+
+      | **VARIABLE**| **NOMBRE** |
+      | ------------- | :---: |
+      | VPC Osaka        | vpc-demo-osa          |     
+      | VPC Tokio        | vpc-demo-tok         |     
+      | Subred Osaka        | subnet-demo-osa           |     
+      | Subred Tokio        | subnet-demo-tok           |     
+      | SSH key Osaka        | key-demo-osa           |     
+      | SSH key Tokio         | key-demo-tok       | 
+
+      <br />
+2. Luego de esto acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
+```
+wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/script.sh
+```
+3. Una vez realizado esto utilice el siguiente comando el cual le otroga permisos al archivo para poder ejecutarlo
+```
+chmod +x script.sh
+```
+4. Para que este script funcione adecuadamente es necesario editar el nombre del grupo de recursos el cual va a utilizar, para esto ingrese el comando:
+```
+vi script.sh
+```
+esto abrira un espacio de edicion, una vez aqui presione la tecla i para acceder al modo de escritura y cambie el nombre de la variale *resourcegroup* por el nombre de su grupo de recursos. Para guardar los cambios realizados presione la tecla *esc* e ingrese el comando
+```
+:wq!
+``` 
+Esto lo llevara de nuevo a la ventana del *IBM Cloud shell*
+
+5. finalemnte ejecute el script para desplegar las 100 VSIs ingresando el comando
+```
+./script.sh
+```
+
+<p align="center">
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/861a86819927494b83200d8642051d66c6000696/Shell.png>
+</p>
+
+### Eliminar las VSIs mediante un script
+para poder eliminar las VSI generadas anteriormente tenga en cuenta los siguientes pasos:
+
+1. Acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
+```
+wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/delete-script.sh
+```
+2. Una vez realizado esto utilice el siguiente comando el cual le otroga permisos al archivo para poder ejecutarlo
+``` 
+chmod +x delete-script.sh
+```
+3. Finalmente ejecute el script para eliminar las 100 VSIs con el sigueinte comando
+```
+./delete-script.sh
+```
+
+<p align="center">
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/68a446690f30fe38f0891055d2a2d31866c56290/delete.png>
+</p>
+
+
+## Crear y configurar un espacio de trabajo en IBM Cloud Schematics (segunda opción)
+Esta opcion es un poco mas lenta que la explicada anteriormente pero es igualmente valida, para realizar el ejercicio lo primero que debe hacer es dirigirse al servicio de <a href="https://cloud.ibm.com/schematics/workspaces">IBM Cloud Schematics</a> y dar click en ```CREAR ESPACIO DE TRABAJO```, una vez hecho esto aparecera una ventana en la que debera diligenciar la siguiente información.
 
 
 | Variable | Descripción |
@@ -109,7 +174,7 @@ Una vez completos todos los campos puede presionar la opcion ``` CREAR```.
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/workspacecreate.gif>
 </p>
 
-## Configurar las variables de personalización de la plantilla de terraform
+### Configurar las variables de personalización de la plantilla de terraform
 Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite personalizar el espacio de trabajo allí debe ingresar la siguiente información:
 
 * ```ssh_keyname_dall```: Ingrese el nombre de la llave ssh creada en Dallas anteriormente.
@@ -125,7 +190,7 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/variables.gif>
 </p>
 
-## Crear un caso en soporte para aumentar la cuota de vCPUs por región 
+### Crear un caso en soporte para aumentar la cuota de vCPUs por región 
 Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada región (especialmente en la región de Dallas), para esto tenga en cuenta los siguientes pasos:
 1. ingrese a la documentación sobre <a href="https://cloud.ibm.com/docs/vpc"> Virtual Private Cloud (VPC)</a> en *IBM Cloud* 
 2. Seleccione la pestaña de ```Cuotas y límites de servicio/Quotas and service limits```.
@@ -149,7 +214,7 @@ Para evitar tener problemas al momento de generar y aplicar el plan de despliegu
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Soporte.gif>
 </p>
 
-## Generar y Aplicar el plan de despliegue de los servidores VPC
+### Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
 
 * ```Generar plan```: Según su configuración, Terraform crea un plan de ejecución y describe las acciones que deben ejecutarse para llegar al estado que se describe en sus archivos de configuración de Terraform. Para determinar las acciones, Schematics analiza los recursos que ya están aprovisionados en su cuenta de IBM Cloud para brindarle una vista previa de si los recursos deben agregarse, modificarse o eliminarse. Puede revisar el plan de ejecución, cambiarlo o simplemente ejecutar el plan
