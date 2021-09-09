@@ -123,7 +123,7 @@ resource "ibm_is_instance" "cce-vsi-sec" {
   }
 
   vpc       = data.ibm_is_vpc.sec_vpc.id
-  zone      = "${region-sec}-1"
+  zone      = "${var.region-sec}-1"
   keys      = [data.ibm_is_ssh_key.sshkeysec.id]
   resource_group = data.ibm_resource_group.group.id
 }
