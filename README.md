@@ -21,10 +21,11 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ## Pre Requisitos :pencil:
 * Contar con una cuenta en <a href="https://cloud.ibm.com/"> IBM Cloud</a>.
 * Contar con un grupo de recursos específico para la implementación de los recursos.
-* Crear una ssh key en cada una de las dos zonas donde se realizara el despliegue de las VSI
-* Crear una VPC en cada una de las dos zonas donde se realizara el despliegue de las VSI con su respectivo segmento de red
-<br />
+* Crear una ssh key en cada una de las dos zonas donde se realizara el despliegue de las VSI (Osaka y Tokio).
+* Crear una VPC en cada una de las dos zonas donde se realizara el despliegue de las VSI con su respectivo segmento de red (Osaka y Tokio).
 
+> Nota: `Tenga en cuenta que en este caso las regiones de despliegue son p-osa y jp-tok`
+  
 ## Crear y configurar una VPC, una subred y una ssh key en cada zona (Dallas, Washington)
 
 ### VPC
