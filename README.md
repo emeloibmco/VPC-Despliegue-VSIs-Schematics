@@ -203,11 +203,11 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 
 <p align="center">
-<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Var.gif>
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/437726a50acbb2e169b94edf423e8fa094c3b815/Var.gif>
 </p>
 
 ### Crear un caso en soporte para aumentar la cuota de vCPUs por región 
-Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada región (especialmente en la región de Dallas), para esto tenga en cuenta los siguientes pasos:
+Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada región, para esto tenga en cuenta los siguientes pasos:
 1. ingrese a la documentación sobre <a href="https://cloud.ibm.com/docs/vpc"> Virtual Private Cloud (VPC)</a> en *IBM Cloud* 
 2. Seleccione la pestaña de ```Cuotas y límites de servicio/Quotas and service limits```.
 3. Una vez se encuentre en esta pestaña de click en el botón ```Contactar a soporte/contact support```, al hacer esto se abrirá una nueva pestaña en donde podrá crear un nuevo caso en soporte.
