@@ -27,7 +27,7 @@ resourcegroup="vpc-demo-rg"
 
 idsprimary=""
 idssecondary=""
-profile="bx2-4x8"
+profile="cx2-4x8"
 ibmcloud target -r $primary
 imageosaid=$(ibmcloud is images | grep -i "ibm-centos-8.*available.*amd64.*public" | cut -d" " -f1)
 vpcosaid=$(ibmcloud is vpcs | grep -i $vpcosa | cut -d" " -f1)
