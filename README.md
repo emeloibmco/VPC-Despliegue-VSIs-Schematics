@@ -8,11 +8,11 @@ La presente guía esta enfocada en crear un despliegue de un grupo de servidores
 ## Índice  📰
 1. [Pre-Requisitos](#Pre-Requisitos-pencil)
 2. [Crear y configurar una VPC, una subred y una ssh key en cada zona (Osaka, Tokio)](#crear-y-configurar-una-vpc-una-subred-y-una-ssh-key-en-cada-zona-dallas-washington)
-3. [Generar el despliegue de las VSIs mediante un script (Primera opción)](#generar-el-despliegue-de-las-vsis-mediante-un-script-primera-opción)
+3. [Crear un caso en soporte para aumentar la cuota de vCPUs por región]
+4. [Generar el despliegue de las VSIs mediante un script (Primera opción)](#generar-el-despliegue-de-las-vsis-mediante-un-script-primera-opción)
     * [Eliminar las VSIs mediante un script](#eliminar-las-vsis-mediante-un-script)
-4. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics (segunda opción)](#crear-y-configurar-un-espacio-de-trabajo-en-ibm-cloud-schematics-segunda-opción)
+5. [Crear y configurar un espacio de trabajo en IBM Cloud Schematics (segunda opción)](#crear-y-configurar-un-espacio-de-trabajo-en-ibm-cloud-schematics-segunda-opción)
     * [Configurar las variables de personalización de la plantilla de terraform](#configurar-las-variables-de-personalización-de-la-plantilla-de-terraform)
-    * [Crear un caso en soporte para aumentar la cuota de vCPUs por región](#crear-un-caso-en-soporte-para-aumentar-la-cuota-de-vcpus-por-región)
     * [Generar y Aplicar el plan de despliegue de los servidores VPC](#generar-y-aplicar-el-plan-de-despliegue-de-los-servidores-vpc)
 7. [Acceder a la ultima VSI creada](#acceder-a-la-ultima-vsi-creada)
 8. [Autores](#autores-black_nib)
@@ -91,6 +91,31 @@ Cuando ya tenga todos los campos configurados de click en el botón ```Crear sub
 </p>
  
 > Nota: `Para acceder a las instancias creadas con la llave publica configurada anteriormente, es necesario conservar localmente la componente privada de la llave`
+
+
+## Crear un caso en soporte para aumentar la cuota de vCPUs por región 
+Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada región, para esto tenga en cuenta los siguientes pasos:
+1. ingrese a la documentación sobre <a href="https://cloud.ibm.com/docs/vpc"> Virtual Private Cloud (VPC)</a> en *IBM Cloud* 
+2. Seleccione la pestaña de ```Cuotas y límites de servicio/Quotas and service limits```.
+3. Una vez se encuentre en esta pestaña de click en el botón ```Contactar a soporte/contact support```, al hacer esto se abrirá una nueva pestaña en donde podrá crear un nuevo caso en soporte.
+4. En esta pestaña debe seleccionar la categoría de Virtual Private Cloud (VPC).
+5. Luego de esto en la ventana de ```tema/topic``` complete la información necesaria de la siguiente manera.
+    * ```tema/topic```: Virtual Private Cloud (VPC).
+    * ```subtema/subtopic```: Solicitud de cuota/Quota request.
+6. Una vez complete esta información de click en el botón ```siguiente```, esto lo llevara a la ventana de ```detalles/details```.
+7. En esta ventana complete la información necesaria de la siguiente manera.
+    * ```Asunto/Subject```: El asunto del caso en ingles Ej:'Increase Quota limit for VPC vCPUs in Dallas'.
+    * ```Descripción/Description```: La descripción del caso en ingles, esta debe contener la siguiente información:
+      * Account number: número de cuenta
+      * Region(s) and Availability Zone(s): regiones y zonas de disponibilidad del caso de soporte
+      * Environment: (Prod/Stage): Ambiente (usar Prod)
+      * JUSTIFICATION FOR REQUEST (REQUIRED): Ej: 'I need help in increasing the vCPU quota dor VPC from 200 vCPUS to 300 vCPUs'
+    * ```Lista de contactos para seguimiento/contacts watchlist```: Aquí puede agregar a otro miembro del grupo, si lo desea, para que sea notificado del caso de soporte.
+8. Una vez complete esta información de click en el botón de ```siguiente``` esto lo llevara a la pestaña de resumen y aquí de click en el botón de ```enviar caso/Submit case``` para finalizar el caso en soporte.
+
+<p align="center">
+<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Soporte.gif>
+</p>
 
 ## Generar el despliegue de las VSIs mediante un script (Primera opción)
 Para generar el despliegue los servidores de manera rapida tenga en cuenta los siguientes pasos:
@@ -206,29 +231,7 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/437726a50acbb2e169b94edf423e8fa094c3b815/Var.gif>
 </p>
 
-### Crear un caso en soporte para aumentar la cuota de vCPUs por región 
-Para evitar tener problemas al momento de generar y aplicar el plan de despliegue de los 100 servidores es necesario aumentar la cuota de vCPUs en VPC por cada región, para esto tenga en cuenta los siguientes pasos:
-1. ingrese a la documentación sobre <a href="https://cloud.ibm.com/docs/vpc"> Virtual Private Cloud (VPC)</a> en *IBM Cloud* 
-2. Seleccione la pestaña de ```Cuotas y límites de servicio/Quotas and service limits```.
-3. Una vez se encuentre en esta pestaña de click en el botón ```Contactar a soporte/contact support```, al hacer esto se abrirá una nueva pestaña en donde podrá crear un nuevo caso en soporte.
-4. En esta pestaña debe seleccionar la categoría de Virtual Private Cloud (VPC).
-5. Luego de esto en la ventana de ```tema/topic``` complete la información necesaria de la siguiente manera.
-    * ```tema/topic```: Virtual Private Cloud (VPC).
-    * ```subtema/subtopic```: Solicitud de cuota/Quota request.
-6. Una vez complete esta información de click en el botón ```siguiente```, esto lo llevara a la ventana de ```detalles/details```.
-7. En esta ventana complete la información necesaria de la siguiente manera.
-    * ```Asunto/Subject```: El asunto del caso en ingles Ej:'Increase Quota limit for VPC vCPUs in Dallas'.
-    * ```Descripción/Description```: La descripción del caso en ingles, esta debe contener la siguiente información:
-      * Account number: número de cuenta
-      * Region(s) and Availability Zone(s): regiones y zonas de disponibilidad del caso de soporte
-      * Environment: (Prod/Stage): Ambiente (usar Prod)
-      * JUSTIFICATION FOR REQUEST (REQUIRED): Ej: 'I need help in increasing the vCPU quota dor VPC from 200 vCPUS to 300 vCPUs'
-    * ```Lista de contactos para seguimiento/contacts watchlist```: Aquí puede agregar a otro miembro del grupo, si lo desea, para que sea notificado del caso de soporte.
-8. Una vez complete esta información de click en el botón de ```siguiente``` esto lo llevara a la pestaña de resumen y aquí de click en el botón de ```enviar caso/Submit case``` para finalizar el caso en soporte.
 
-<p align="center">
-<img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/2bef55b7c51b55bd02f8eec81779d5ddaa2cb5c4/Soporte.gif>
-</p>
 
 ### Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
