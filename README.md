@@ -104,7 +104,7 @@ Para evitar tener problemas al momento de generar y aplicar el plan de despliegu
     * ```subtema/subtopic```: Solicitud de cuota/Quota request.
 6. Una vez complete esta información de click en el botón ```siguiente```, esto lo llevara a la ventana de ```detalles/details```.
 7. En esta ventana complete la información necesaria de la siguiente manera.
-    * ```Asunto/Subject```: El asunto del caso en ingles Ej:'Increase Quota limit for VPC vCPUs in Dallas'.
+    * ```Asunto/Subject```: El asunto del caso en ingles Ej:'Increase Quota limit for VPC vCPUs in (Osaka/Tokio)'.
     * ```Descripción/Description```: La descripción del caso en ingles, esta debe contener la siguiente información:
       * Account number: número de cuenta
       * Region(s) and Availability Zone(s): regiones y zonas de disponibilidad del caso de soporte
