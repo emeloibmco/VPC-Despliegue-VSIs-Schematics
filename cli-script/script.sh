@@ -34,7 +34,7 @@ vpcosaid=$(ibmcloud is vpcs | grep -i $vpcosa | cut -d" " -f1)
 keyosaid=$(ibmcloud is keys | grep -i $keyosa | cut -d" " -f1)
 subnetosaid=$(ibmcloud is subnets | grep -i $subnetosa | cut -d" " -f1)
 
-for i in {1..10}
+for i in {1..50}
 do
    var1osa=$(ibmcloud is instance-create $BaseName-primary-$i $vpcosaid $primary-1 $profile $subnetosaid --image-id $imageosaid --key-ids $keyosaid --resource-group-name $resourcegroup)
    echo "Instancia $BaseName-primary-$i Creada"
@@ -50,7 +50,7 @@ vpctokid=$(ibmcloud is vpcs | grep -i $vpctok | cut -d" " -f1)
 keytokid=$(ibmcloud is keys | grep -i $keytok | cut -d" " -f1)
 subnettokid=$(ibmcloud is subnets | grep -i $subnettok | cut -d" " -f1)
 
-for i in {1..10}
+for i in {1..50}
 do
    var1tok=$(ibmcloud is instance-create $BaseName-secondary-$i $vpctokid $secondary-1 $profile $subnettokid --image-id $imagetokid --key-ids $keytokid --resource-group-name $resourcegroup)
    echo "Instancia $BaseName-secondary-$i Creada"
