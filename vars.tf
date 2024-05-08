@@ -28,12 +28,14 @@ variable "name_subnet_pr" {
   description = "subnet name primary region"
 }
 variable "subnet_zone_pr" {
+  default = "1"
   description = "number that identify the zone"
 }
 variable "name_subnet_sec" {
   description = "subnet name secondary region"
 }
 variable "subnet_zone_sec" {
+  default = "1"
   description = "number that identify the zone"
 }
 variable "count-vsi" {
