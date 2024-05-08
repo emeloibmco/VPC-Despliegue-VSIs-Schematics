@@ -226,6 +226,8 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```name_subnet_sec```: Ingrese el nombre de la subred desplegada en la VPC de Tokio anteriormente.
 * ```count-vsi```: Esta variable le permite establecer el numero de servidores virtuales que va a crear, debe ingresar un numero par ya que se despliegua con una distribución de dos regiones de disponibilidad
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
+* ```subnet_zone_pr```: Ingrese el numero correspondiente a la zona donde se encuentre su subnet de la VPC desplegada en Osaka anteriormente.
+* ```subnet_zone_sec```: Ingrese el numero correspondiente a la zona donde se encuentre su subnet de la VPC desplegada en Tokio anteriormente.
 
 <p align="center">
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/437726a50acbb2e169b94edf423e8fa094c3b815/Var.gif>
