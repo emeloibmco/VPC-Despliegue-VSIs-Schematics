@@ -228,13 +228,26 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 * ```resource_group```: Ingrese el nombre del grupo de recursos en el cual tiene permisos y donde quedaran agrupados todos los recursos que se aprovisionaran.
 * ```subnet_zone_pr```: Ingrese el numero correspondiente a la zona donde se encuentre su subnet de la VPC desplegada en Osaka anteriormente.
 * ```subnet_zone_sec```: Ingrese el numero correspondiente a la zona donde se encuentre su subnet de la VPC desplegada en Tokio anteriormente.
-
+* ```image_vsi_pr```: Ingrese el id correspondiente a la imagen deseada para VPC primaria.
+* ```image_vsi_sec```: Ingrese el id correspondiente a la imagen deseada para VPC secundaria.
 <p align="center">
 <img width="800" alt="img8" src=https://github.com/emeloibmco/VPC-Despliegue-VSIs-Schematics-IMG/blob/437726a50acbb2e169b94edf423e8fa094c3b815/Var.gif>
 </p>
 
+### Verifique las imagenes dispibles para las regiones donde se encuentran las VPC
 
 
+    1. Conéctese a IBM cloud shell.
+    2. Ubiquese en la region donde desea verificar las imagenes disponibles.
+    ```
+    ibmcloud target -r <region>
+    ```
+    3. Liste las imagenes disponibles para la region.
+    ```
+    ibmcloud is images | grep centos
+    ```
+    4. No olvide verficar que la imagen no este deprecated, el identificar de la imagen se encuentra en la primera columna.
+    
 ### Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
 
