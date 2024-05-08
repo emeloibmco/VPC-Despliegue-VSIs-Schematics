@@ -102,7 +102,7 @@ resource "ibm_is_instance" "cce-vsi-pr" {
   }
 
   vpc       = data.ibm_is_vpc.pr_vpc.id
-  zone      = "${var.region-pr}-1"
+  zone      = "${var.region-pr}-${var.subnet_zone_pr}"
   keys      = [data.ibm_is_ssh_key.sshkeypr.id]
   resource_group = data.ibm_resource_group.group.id
 }
@@ -123,7 +123,7 @@ resource "ibm_is_instance" "cce-vsi-sec" {
   }
 
   vpc       = data.ibm_is_vpc.sec_vpc.id
-  zone      = "${var.region-sec}-1"
+  zone      = "${var.region-sec}-${var.subnet_zone_sec}"
   keys      = [data.ibm_is_ssh_key.sshkeysec.id]
   resource_group = data.ibm_resource_group.group.id
 }
