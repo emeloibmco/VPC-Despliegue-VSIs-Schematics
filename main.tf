@@ -94,7 +94,7 @@ resource "ibm_is_instance" "cce-vsi-pr" {
   provider = ibm.primary
   count    = var.count-vsi/2
   name    = "cce-vsipr-${count.index + 1}"
-  image   = "r006-de4fc543-2ce1-47de-b0b8-b98556a741da"
+  image   = "r006-13938c0a-89e4-4370-b59b-55cd1402562d"
   profile = "cx2-4x8"
 
   primary_network_interface {
@@ -115,7 +115,7 @@ resource "ibm_is_instance" "cce-vsi-sec" {
   provider = ibm.secondary
   count    = var.count-vsi/2
   name    = "cce-vsisec${count.index + 1}"
-  image   = "r014-ce5f692d-763d-4b5a-bca2-93d6990fb3fd"
+  image   = "r006-13938c0a-89e4-4370-b59b-55cd1402562d"
   profile = "cx2-4x8"
 
   primary_network_interface {
