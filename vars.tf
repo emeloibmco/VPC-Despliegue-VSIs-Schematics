@@ -27,11 +27,15 @@ variable "name_vpc_sec" {
 variable "name_subnet_pr" {
   description = "subnet name primary region"
 }
-
+variable "subnet_zone_pr" {
+  description = "number that identify the zone"
+}
 variable "name_subnet_sec" {
   description = "subnet name secondary region"
 }
-
+variable "subnet_zone_sec" {
+  description = "number that identify the zone"
+}
 variable "count-vsi" {
   description = "number of vsi"
 }
