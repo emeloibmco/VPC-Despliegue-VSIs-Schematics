@@ -237,16 +237,17 @@ Una vez  creado el espacio de trabajo, podra ver el campo VARIABLES que permite 
 ### Verifique las imagenes dispibles para las regiones donde se encuentran las VPC
 
 
-    1. Conéctese a IBM cloud shell.
-    2. Ubiquese en la region donde desea verificar las imagenes disponibles.
+1. Conéctese a IBM cloud shell.
+    
+2. Ubiquese en la region donde desea verificar las imagenes disponibles.
     ```
     ibmcloud target -r <region>
     ```
-    3. Liste las imagenes disponibles para la region.
+3. Liste las imagenes disponibles para la region.
     ```
     ibmcloud is images | grep centos
     ```
-    4. No olvide verficar que la imagen no este deprecated, el identificar de la imagen se encuentra en la primera columna.
+4. No olvide verficar que la imagen no este deprecated, el id de la imagen se encuentra en la primera columna.
     
 ### Generar y Aplicar el plan de despliegue de los servidores VPC
 Ya que estan todos los campos de personalización completos, debe ir hasta la parte superior de la ventana donde encontrara dos opciones, Generar plan y Aplicar plan. Para continuar con el despliegue de los recursos debera presionar ```Generar Plan``` y una vez termine de generarse el plan ```Aplicar Plan```.
