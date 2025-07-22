@@ -102,15 +102,16 @@ Para generar el despliegue los servidores tenga en cuenta los siguientes pasos:
 
       | **VARIABLE**| **NOMBRE** |
       | ------------- | :---: |
-      | VPC Osaka        | vpc-demo-osa          |     
-      | VPC Tokio        | vpc-demo-tok         |     
-      | Subred Osaka        | subnet-demo-osa           |     
-      | Subred Tokio        | subnet-demo-tok           |     
-      | SSH key Osaka        | key-demo-osa           |     
-      | SSH key Tokio         | key-demo-tok       | 
+      | vpc_primary        | vpc-dall          |     
+      | VPC Tokio        | vpc-wash         |     
+      | subnet_primary        | Extraer           |     
+      | subnet_secondary      | Extraer           |     
+      | key_primary        | key-dall           |     
+      | key_secondary         | key-wash       | 
 
       <br />
-2. Luego de esto acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
+2. Modifique las variables *primary* y *secondary* segun las regiones utilizadas. *vpc_primary* y *vpc_secondary* segun los nombres de VPC utilizados. Extraiga los nombres de sus subnets para *subnet_primary* y *subnet_secondary*. *key_** dependeran de los nombresa asignados a las SSH keys.
+3. Luego de esto acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
 ```
 wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/script.sh
 ```
