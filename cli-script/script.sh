@@ -16,7 +16,7 @@ key_primary="key-dall"
 # Secondary
 vpc_secondary="vpc-wash"
 subnet_secondary="sn-20250722-01"
-key_secondary="key-dall"
+key_secondary="key-wash"
 
 BaseName="vsi"
 resourcegroup="cce-valtadria"
