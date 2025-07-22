@@ -138,7 +138,6 @@ Para generar el despliegue los servidores de manera rapida tenga en cuenta los s
 | `profile`          |          `cx2-4x8`          |
 
 
-      <br />
 2. Luego de esto acceda al *IBM Cloud Shell* e ingrese el siguiente comando para descargar el script necesario
 ```
 wget https://raw.githubusercontent.com/emeloibmco/VPC-Despliegue-VSIs-Schematics/main/cli-script/script.sh
